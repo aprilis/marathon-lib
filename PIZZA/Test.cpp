@@ -20,6 +20,8 @@ Test::Test(int width, int height) : Game(width, height)
     info.addFunction("random letter", randomLetter);
     info.addItem("s", object.s);
     info.addItem("a", object.a);
+    info.addItem("k", object.k);
+    info.addFunction("x", [this]() { return object.x ? "true" : "false"; });
     info.addItem("text", text);
 }
 

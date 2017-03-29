@@ -55,7 +55,7 @@ protected:
 
     QWidget *widget;
 
-    char *object;
+    char *object = nullptr;
 
     int offset;
 
@@ -169,14 +169,14 @@ public:
         widget = combo;
     }
 
-    ComboBoxProperty &add(string key, const T &value)
+    ComboBoxProperty *add(string key, const T &value)
     {
         combo->addItem(key.c_str());
         values.push_back(value);
-        return *this;
+        return this;
     }
 
-    ComboBoxProperty &add(const T &value)
+    ComboBoxProperty *add(const T &value)
     {
         return add(toQString(value).toStdString(), value);
     }
@@ -192,7 +192,8 @@ public:
 
     void valueChanged()
     {
-        getTObject() = values[combo->currentIndex()];
+        if(object != nullptr)
+            getTObject() = values[combo->currentIndex()];
     }
 };
 
@@ -214,17 +215,17 @@ public:
     QFormLayout* getForm();
 };
 
-template<class T> Property* makeDefaultProperty(string text, T &property, void *object)
+template<class T> DefaultProperty<T>* makeDefaultProperty(string text, T &property, void *object)
 {
     return new DefaultProperty<T>(text, (char*)&property - (char*)object);
 }
 
-template<class T> Property* makeComboBoxProperty(string text, T &property, void *object)
+template<class T> ComboBoxProperty<T>* makeComboBoxProperty(string text, T &property, void *object)
 {
     return new ComboBoxProperty<T>(text, (char*)&property - (char*)object);
 }
 
 #define DEFAULT_PROPERTY(prop) makeDefaultProperty(#prop, prop, this)
-#define COMBOBOX_PROPERTY(prop) madeComboBoxProperty(#prop, prop, this)
+#define COMBOBOX_PROPERTY(prop) makeComboBoxProperty(#prop, prop, this)
 
 #endif // PROPERTIESEDITOR_H

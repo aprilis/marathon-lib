@@ -28,6 +28,10 @@ public:
 
     void removeItem(string label);
 
+    bool hasItem(string label);
+
+    void clear();
+
     void draw(sf::RenderWindow &window);
 };
 

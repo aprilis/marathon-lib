@@ -8,7 +8,9 @@
 struct TestObject
 {
     int a = 0, b = 0;
-    string s = "a"; 
+    string s = "a";
+    bool x = false;
+    int k = 0;
   
     PropertiesEditor& getPropertiesEditor()
     {
@@ -21,6 +23,8 @@ struct TestObject
             editor.add(DEFAULT_PROPERTY(a));
             editor.add(DEFAULT_PROPERTY(b));
             editor.add(DEFAULT_PROPERTY(s));
+            editor.add(DEFAULT_PROPERTY(x));
+            editor.add(COMBOBOX_PROPERTY(k)->add("zero", 0)->add(1)->add(2)->add(3));
         }
         editor.setObject(this);
         return editor;

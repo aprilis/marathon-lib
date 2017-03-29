@@ -35,3 +35,16 @@ void Info::removeItem(string label)
             i--;
         }
 }
+
+bool Info::hasItem(string label)
+{
+    for(const auto &i: items)
+        if(i.first == label)
+            return true;
+    return false;
+}
+
+void Info::clear()
+{
+    items.clear();
+}
