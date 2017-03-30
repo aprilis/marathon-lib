@@ -18,7 +18,7 @@ double length(sf::Vector2f vec)
 Game::Game(int windowWidth, int windowHeight, string title)
     : window(sf::VideoMode(windowWidth, windowHeight), title)
 {
-    view.setCenter(0, 0);
+    //view.setCenter(0, 0);
 }
 
 sf::Vector2f Game::getMousePosition()
@@ -232,4 +232,10 @@ void Game::nextTurn()
     wait();
     turnTime.restart();
 #endif
+}
+
+void Game::moveCamera(sf::Vector2f center, float zoom)
+{
+    view.setCenter(center);
+    view.setSize(window.getSize().x, window.getSize().y);
 }

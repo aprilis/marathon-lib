@@ -23,6 +23,8 @@ Test::Test(int width, int height) : Game(width, height)
     info.addItem("k", object.k);
     info.addFunction("x", [this]() { return object.x ? "true" : "false"; });
     info.addItem("text", text);
+
+    hex.init(20, 20, 20.f);
 }
 
 void Test::draw()
@@ -33,14 +35,16 @@ void Test::draw()
     //mozna tez zrobic shape.setFillColor(sf::Color(r, g, b));
     shape.setFillColor(sf::Color::White);
     shape.rotate(75);
-    shape.setPosition(100, 100);
+    shape.setPosition(500, 300);
     //nie trzeba wywolywac wszystkich funkcji powyzej, wtedy niektore parametry (obrot, kolor itp) beda domyslne
     window.draw(shape);
 
     //dalej mozna uzyc tego samego obiektu shape do rysowania kolejnego prostokata)
-    shape.setPosition(200, 100);
+    shape.setPosition(500, 100);
     shape.setFillColor(sf::Color::Red);
     window.draw(shape);
+
+    hex.draw(window);
 }
 
 void Test::myProcessEvent(const sf::Event &event)
@@ -52,6 +56,8 @@ void Test::myProcessEvent(const sf::Event &event)
             if(show_turns) info.addItem("turns left", turns);
             else info.removeItem("turns left");
         }
+        else if(event.key.code == sf::Keyboard::Return)
+            edit(object); //otwiera okienko edycji zmiennych
     if(event.type == sf::Event::TextEntered)
     {
         text += (char)event.text.unicode;
@@ -71,6 +77,7 @@ void Test::firstSync()
 
 void Test::leftClick(sf::Vector2f position)
 {
-    //na klikniecie myszka wyskakuje okienko w ktorym mozna edytowac dane nalezace do object
-    edit(object);
+    auto p = hex.getHex(position);
+    if(p.first != -1)
+        hex.setColor(p.first, p.second, sf::Color::Red);
 }

@@ -17,7 +17,6 @@ protected:
     sf::RenderWindow window;
 
     sf::View view;
-    float zoom = 1;
 
     sf::Vector2f mouseClick;
 
@@ -74,6 +73,8 @@ public:
     Game(int windowWidth, int windowHeight, string title = "PIZZA");
 
     sf::Vector2f getMousePosition();
+
+    void moveCamera(sf::Vector2f center, float zoom = 1.f);
 
     void run();
 };

@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     Info.cpp \
     PropertiesEditor.cpp \
     Test.cpp \
-    wrapper.cpp
+    wrapper.cpp \
+    HexMap.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -22,7 +23,8 @@ HEADERS += \
     Settings.h \
     Test.h \
     Config.h \
-    wrapper.h
+    wrapper.h \
+    HexMap.h
 
 LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system
 

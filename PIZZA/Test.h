@@ -3,8 +3,9 @@
 
 #include "Game.h"
 #include "PropertiesEditor.h"
+#include "HexMap.h"
 
-//tego nie musicie ogarniac, to nie jest takie wazne
+//musi to byc klasa zawierajaca funkcje getPropertiesEditor() wygladajaca jak w przykladzie
 struct TestObject
 {
     int a = 0, b = 0;
@@ -53,6 +54,8 @@ protected:
     int turns = 0;
 
     string text;
+
+    HexMap hex;
 
 public:
     Test() = default;
