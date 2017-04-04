@@ -51,6 +51,13 @@ pair<int, int> HexMap::getHex(sf::Vector2f position) const
     return best;
 }
 
+void HexMap::draw(Game &game) const
+{
+    for(const auto &x: hexes)
+        for(const auto &y: x)
+            game.addDrawable(y);
+}
+
 void HexMap::draw(sf::RenderWindow &window) const
 {
     for(const auto &x: hexes)

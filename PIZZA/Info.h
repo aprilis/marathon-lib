@@ -5,6 +5,7 @@
 #include <functional>
 #include <vector>
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Info
@@ -15,6 +16,8 @@ class Info
 
 public:
     static void loadFont(string filename) { font.loadFromFile(filename); }
+
+    static sf::Font& getFont() { return font; }
 
     void addFunction(string label, function<string()> function)
     {
@@ -33,6 +36,8 @@ public:
     void clear();
 
     void draw(sf::RenderWindow &window);
+
+    void log(ostream &o);
 };
 
 template<> void Info::addItem<string>(string label, string &variable);

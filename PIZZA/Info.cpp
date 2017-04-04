@@ -12,7 +12,7 @@ void Info::draw(sf::RenderWindow &window)
     text.setColor(color);
     text.setCharacterSize(size);
     sf::Vector2f pos(gap, gap);
-    for(auto item: items)
+    for(const auto &item: items)
     {
         text.setPosition(pos);
         text.setString(item.first + ": " + item.second());
@@ -47,4 +47,10 @@ bool Info::hasItem(string label)
 void Info::clear()
 {
     items.clear();
+}
+
+void Info::log(ostream &o)
+{
+    for(const auto &item: items)
+        o << "info " << item.first << ": " << item.second() << "\n";
 }

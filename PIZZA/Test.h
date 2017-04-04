@@ -1,5 +1,5 @@
-#ifndef TEST_H
-#define TEST_H
+#ifndef TESTT_H
+#define TESTT_H
 
 #include "Game.h"
 #include "PropertiesEditor.h"
@@ -63,4 +63,4 @@ public:
     Test(int width, int height);
 };
 
-#endif // TEST_H
+#endif // TESTT_H

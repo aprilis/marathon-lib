@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include "Game.h"
 using namespace std;
 
 class HexMap
@@ -26,6 +27,8 @@ public:
 
     //returns pair (row, column) or (-1, -1) if position is outside map
     pair<int, int> getHex(sf::Vector2f position) const;
+
+    void draw(Game &game) const;
 
     void draw(sf::RenderWindow &window) const;
 };

@@ -29,22 +29,6 @@ Test::Test(int width, int height) : Game(width, height)
 
 void Test::draw()
 {
-    //rysowanie prostokata na ekranie
-    sf::RectangleShape shape;
-    shape.setSize(sf::Vector2f(50, 50));
-    //mozna tez zrobic shape.setFillColor(sf::Color(r, g, b));
-    shape.setFillColor(sf::Color::White);
-    shape.rotate(75);
-    shape.setPosition(500, 300);
-    //nie trzeba wywolywac wszystkich funkcji powyzej, wtedy niektore parametry (obrot, kolor itp) beda domyslne
-    window.draw(shape);
-
-    //dalej mozna uzyc tego samego obiektu shape do rysowania kolejnego prostokata)
-    shape.setPosition(500, 100);
-    shape.setFillColor(sf::Color::Red);
-    window.draw(shape);
-
-    hex.draw(window);
 }
 
 void Test::myProcessEvent(const sf::Event &event)
@@ -68,6 +52,22 @@ void Test::sync()
 {
     //tu robimy synchronizacje z serwerem
     turns = turns_left();
+
+    //rysowanie prostokata na ekranie
+    sf::RectangleShape shape;
+    shape.setSize(sf::Vector2f(50, 50));
+    //mozna tez zrobic shape.setFillColor(sf::Color(r, g, b));
+    shape.setFillColor(sf::Color::White);
+    shape.rotate(75);
+    shape.setPosition(500, 300);
+    //nie trzeba wywolywac wszystkich funkcji powyzej, wtedy niektore parametry (obrot, kolor itp) beda domyslne
+    addDrawable(shape);
+
+    //dalej mozna uzyc tego samego obiektu shape do rysowania kolejnego prostokata)
+    shape.setPosition(500, 100);
+    shape.setFillColor(sf::Color::Red);
+    addDrawable(shape);
+    hex.draw(*this);
 }
 
 void Test::firstSync()

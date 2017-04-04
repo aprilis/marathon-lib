@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "wrapper.h"
 #include "Config.h"
+#include "Log.h"
 #include <QApplication>
 #include <algorithm>
 #include <iostream>
@@ -16,9 +17,8 @@ double length(sf::Vector2f vec)
 }
 
 Game::Game(int windowWidth, int windowHeight, string title)
-    : window(sf::VideoMode(windowWidth, windowHeight), title)
+    : window(sf::VideoMode(windowWidth, windowHeight), title), gameState(title)
 {
-    //view.setCenter(0, 0);
 }
 
 sf::Vector2f Game::getMousePosition()
@@ -77,6 +77,7 @@ void Game::run()
             mut.lock();
             window.clear();
             window.setView(view);
+            gameState.draw(window);
             draw();
             drawSelection();
             window.setView(window.getDefaultView());
@@ -85,6 +86,7 @@ void Game::run()
             mut.unlock();
         }
         mut.lock();
+        gameState.update();
         QApplication::processEvents();
         mut.unlock();
     }
@@ -105,11 +107,18 @@ void Game::runSync()
                 if(playing == false) break;
                 try
                 {
+                    gameState.clearDrawables();
                     sync();
+#ifndef SEND_COMMANDS_LATE
+                    sendCommands();
+#endif
+#ifdef SAVE_GAME
+                    info.log(gameState.log);
+#endif
                 }
                 catch(pair<int, string> e)
                 {
-                    cerr << "exception!: " << e.first << " " << e.second << endl;
+                    merr << "exception!: " << e.first << " " << e.second << "\n";
                     throw e;
                 }
             }
@@ -123,7 +132,7 @@ void Game::runSync()
                 }
                 catch(pair<int, string> e)
                 {
-                    cerr << "exception!: " << e.first << " " << e.second << endl;
+                    merr << "exception!: " << e.first << " " << e.second << "\n";
                     throw e;
                 }
             }
@@ -131,6 +140,8 @@ void Game::runSync()
             usleep(100);
 #endif
             nextTurn();
+            mout.flush();
+            merr.flush();
         }
         catch(...)
         {
@@ -218,6 +229,9 @@ void Game::drawSelection()
 
 void Game::nextTurn()
 {
+    mut.lock();
+    gameState.nextTurn();
+    mut.unlock();
 #ifdef TURNS_LEFT_COMMAND
     int left = turns_left();
     if(left == turnsLeft)
@@ -234,8 +248,10 @@ void Game::nextTurn()
 #endif
 }
 
-void Game::moveCamera(sf::Vector2f center, float zoom)
+void Game::moveCamera(float cx, float cy, float zoom)
 {
+    sf::Vector2f center(cx, cy);
     view.setCenter(center);
     view.setSize(window.getSize().x, window.getSize().y);
+    view.zoom(zoom);
 }

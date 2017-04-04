@@ -11,7 +11,11 @@ SOURCES += main.cpp \
     PropertiesEditor.cpp \
     Test.cpp \
     wrapper.cpp \
-    HexMap.cpp
+    HexMap.cpp \
+    Log.cpp \
+    StreamWindow.cpp \
+    GameState.cpp \
+    Maze.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -24,8 +28,10 @@ HEADERS += \
     Test.h \
     Config.h \
     wrapper.h \
-    HexMap.h
+    HexMap.h \
+    Log.h \
+    StreamWindow.h \
+    GameState.h \
+    Maze.h
 
-LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system
-
-OTHER_FILES +=
+LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system -lgcc_s -lgcc

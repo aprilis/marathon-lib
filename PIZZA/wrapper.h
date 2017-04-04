@@ -1,4 +1,5 @@
 #include "CTcpFwd.h"
+#include "Log.h"
 #include <string>
 #include <vector>
 using namespace std;

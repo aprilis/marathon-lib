@@ -4,8 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include "Info.h"
 #include "Config.h"
+#include "GameState.h"
 #include <thread>
 #include <mutex>
+#include <sstream>
 using namespace std;
 
 //od tej klasy trzeba zrobic klase pochodna (dziedziczaca)
@@ -30,13 +32,15 @@ protected:
 
     bool end = false;
 
-    float turnDuration = 1;
+    float turnDuration = TURN_DURATION;
 
     void processEvent(const sf::Event &event);
 
     void updateCamera();
 
     int turnsLeft = 1e9;
+
+    GameState gameState;
 
     void drawSelection();
 
@@ -74,9 +78,13 @@ public:
 
     sf::Vector2f getMousePosition();
 
-    void moveCamera(sf::Vector2f center, float zoom = 1.f);
+    void moveCamera(float cx, float cy, float zoom = 1.f);
 
     void run();
+
+    template<class T> void addDrawable(const T &x) { gameState.addDrawable(x); }
+
+    void showOutputWindow() { gameState.showWindow(); }
 };
 
 #endif // GAME_H
