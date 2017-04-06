@@ -17,14 +17,14 @@ void HexMap::init(int rows, int columns, float size)
 
 void HexMap::setColor(int row, int column, sf::Color color)
 {
-    if(row >= 0 && row < hexes.size() && column >= 0 && column < hexes[0].size())
+    if(row >= 0 && row < rowCount() && column >= 0 && column < colCount())
         hexes[row][column].setFillColor(color);
     else cerr << "WARNING: index out of range" << endl;
 }
 
 sf::Vector2f HexMap::getPosition(int row, int column) const
 {
-    if(row >= 0 && row < hexes.size() && column >= 0 && column < hexes[0].size())
+    if(row >= 0 && row < rowCount() && column >= 0 && column < colCount())
         return hexes[row][column].getPosition();
     else cerr << "WARNING: index out of range" << endl;
     return sf::Vector2f();
@@ -36,7 +36,7 @@ pair<int, int> HexMap::getHex(sf::Vector2f position) const
     int column = floor(position.x / (radius * 2 * h_factor)), row = floor(position.y / (radius * 2 * v_factor));
     pair<int, int> best(-1, -1);
     float min_dist = radius * radius;
-    int rows = hexes.size(), columns = hexes[0].size();
+    int rows = rowCount(), columns = colCount();
     for(int i = max(0, row - 2); i < min(rows, row + 3); i++)
         for(int j = max(0, column - 2); j < min(columns, column + 3); j++)
         {
@@ -73,7 +73,9 @@ vector<pair<int, int>> HexMap::getNeighbours(int x, int y) const
     vector<pair<int, int>> result;
     for(int i = 0; i < 6; i++)
     {
-        result.push_back(make_pair(x + move_x[x % 2][i], y + move_y[x % 2][i]));
+        auto res = make_pair(x + move_x[x % 2][i], y + move_y[x % 2][i]);
+        if(res.first >= 0 && res.second >= 0 && res.first < rowCount() && res.second < colCount())
+            result.push_back(res);
     }
     return result;
 }

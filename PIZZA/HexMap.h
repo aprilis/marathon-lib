@@ -14,6 +14,9 @@ class HexMap
 
     const float h_factor = 0.9, v_factor = 0.8;
 
+    int rowCount() const { return hexes.size(); }
+    int colCount() const { return hexes.empty() ? 0 : hexes[0].size(); }
+
 public:
     HexMap() = default;
 

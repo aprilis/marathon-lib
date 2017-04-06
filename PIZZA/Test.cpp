@@ -79,5 +79,10 @@ void Test::leftClick(sf::Vector2f position)
 {
     auto p = hex.getHex(position);
     if(p.first != -1)
-        hex.setColor(p.first, p.second, sf::Color::Red);
+    {
+        auto nei =  hex.getNeighbours(p.first, p.second);
+        for(auto n: nei)
+            hex.setColor(n.first, n.second, sf::Color::Red);
+        hex.setColor(p.first, p.second, sf::Color::Green);
+    }
 }
