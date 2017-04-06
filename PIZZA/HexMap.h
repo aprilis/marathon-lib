@@ -31,6 +31,8 @@ public:
     void draw(Game &game) const;
 
     void draw(sf::RenderWindow &window) const;
+
+    vector<pair<int, int>> getNeighbours(int x, int y) const;
 };
 
 #endif // HEXMAP_H

@@ -64,3 +64,17 @@ void HexMap::draw(sf::RenderWindow &window) const
         for(const auto &y: x)
             window.draw(y);
 }
+
+int move_x[2][6] = {{0, 0, 1, -1, 1, -1}, {0, 0, 1, -1, -1, 1}};
+int move_y[2][6] = {{1, -1, 0, 0, -1, -1}, {1, -1, 0, 0, 1, 1}};
+
+vector<pair<int, int>> HexMap::getNeighbours(int x, int y) const
+{
+    vector<pair<int, int>> result;
+    for(int i = 0; i < 6; i++)
+    {
+        result.push_back(make_pair(x + move_x[x % 2][i], y + move_y[x % 2][i]));
+    }
+    return result;
+}
+
