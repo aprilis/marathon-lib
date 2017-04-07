@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
         try
         {
             open_log(logger, "logs");
-            Test t(800, 600);
+            Maze t(800, 600);
             t.run();
         }
         catch(...)

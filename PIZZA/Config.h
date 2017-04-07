@@ -14,7 +14,7 @@
 #define TURN_DURATION 1.0
 
 //okresla czy dlugosc trwania tury ma byc mierzony automatycznie (powoduje to strate dwoch tur przy uruchomieniu programu)
-#define AUTO_TURN_DURATION
+//#define AUTO_TURN_DURATION
 
 //wspolczynnik przez ktory jest mnozona zmierzona dlugosc trwania tury (jesli zdefiniowano AUTO_TURN_DURATION)
 #define TURN_DURATION_RATIO 0.6
@@ -36,5 +36,7 @@
 
 //czy przebieg gry ma byc zapisywany do pliku
 #define SAVE_GAME
+
+#define TURN_MISSED_EXCEPTION
 
 #endif // CONFIG_H
