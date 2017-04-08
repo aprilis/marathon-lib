@@ -239,12 +239,7 @@ void Game::nextTurn()
         wait();
         left = turns_left();
     }
-    else if(left > turnsLeft)
-    {
-        merr << "Nowa gra\n";
-        throw make_pair(-6, "Nowa gra");
-    }
-    else if(turnsLeft != 1e9)
+    else if(left < turnsLeft && turnsLeft != 1e9)
     {
         merr << left << " " << turnsLeft << "\n";
         merr << "Przeskakujesz turę\n";
@@ -252,8 +247,12 @@ void Game::nextTurn()
         throw make_pair(-5, "Turn missed");
 #endif
     }
+    if(left > turnsLeft)
+    {
+        merr << "Nowa gra\n";
+        throw make_pair(-6, "Nowa gra");
+    }
     turnTime.restart();
-    if(turnsLeft < left) throw 0;
     turnsLeft = left;
 #else
     wait();
