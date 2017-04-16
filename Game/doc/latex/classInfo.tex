@@ -1,0 +1,146 @@
+\hypertarget{classInfo}{}\section{Info Class Reference}
+\label{classInfo}\index{Info@{Info}}
+
+
+Usable class for printing real-\/time info.  
+
+
+
+
+{\ttfamily \#include $<$Info.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classInfo_a1510c6fef726231c8e6206ad6fe8e54a}{add\+Function} (string label, function$<$ string()$>$ function)
+\begin{DoxyCompactList}\small\item\em Adds function returning string to the info. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classInfo_a19d28f3de1bd231f261097ce2a0aebd6}{add\+Item} (string label, T \&variable)
+\begin{DoxyCompactList}\small\item\em Adds a reference to the variable. \end{DoxyCompactList}\item 
+void \hyperlink{classInfo_af720d655559a164398971ef7f42feb22}{remove\+Item} (string label)
+\begin{DoxyCompactList}\small\item\em Removes all infos with specified label. \end{DoxyCompactList}\item 
+bool \hyperlink{classInfo_afaace7a1302cd4b4d2ef292a851cab4d}{has\+Item} (string label)
+\begin{DoxyCompactList}\small\item\em Checks if there exists any info with specified label. \end{DoxyCompactList}\item 
+void \hyperlink{classInfo_a57d227fdc9818b6079f7f4fa9cbcc47e}{clear} ()\hypertarget{classInfo_a57d227fdc9818b6079f7f4fa9cbcc47e}{}\label{classInfo_a57d227fdc9818b6079f7f4fa9cbcc47e}
+
+\begin{DoxyCompactList}\small\item\em Removes all items. \end{DoxyCompactList}\item 
+void \hyperlink{classInfo_af6ad526053db91850b6a09c03cc0ee4c}{draw} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draws info to the window. \end{DoxyCompactList}\item 
+void \hyperlink{classInfo_a3d4c435598d5147cc606985deacae7ea}{log} (ostream \&o)
+\begin{DoxyCompactList}\small\item\em Saves info for later replays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Usable class for printing real-\/time info. 
+
+\subsection{Member Function Documentation}
+\index{Info@{Info}!add\+Function@{add\+Function}}
+\index{add\+Function@{add\+Function}!Info@{Info}}
+\subsubsection[{\texorpdfstring{add\+Function(string label, function$<$ string()$>$ function)}{addFunction(string label, function< string()> function)}}]{\setlength{\rightskip}{0pt plus 5cm}void Info\+::add\+Function (
+\begin{DoxyParamCaption}
+\item[{string}]{label, }
+\item[{function$<$ string()$>$}]{function}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classInfo_a1510c6fef726231c8e6206ad6fe8e54a}{}\label{classInfo_a1510c6fef726231c8e6206ad6fe8e54a}
+
+
+Adds function returning string to the info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & the label \\
+\hline
+{\em function} & the function that should take 0 arguments and return a string \\
+\hline
+\end{DoxyParams}
+\index{Info@{Info}!add\+Item@{add\+Item}}
+\index{add\+Item@{add\+Item}!Info@{Info}}
+\subsubsection[{\texorpdfstring{add\+Item(string label, T \&variable)}{addItem(string label, T &variable)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void Info\+::add\+Item (
+\begin{DoxyParamCaption}
+\item[{string}]{label, }
+\item[{T \&}]{variable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classInfo_a19d28f3de1bd231f261097ce2a0aebd6}{}\label{classInfo_a19d28f3de1bd231f261097ce2a0aebd6}
+
+
+Adds a reference to the variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & the label \\
+\hline
+{\em variable} & a reference to the variable. It must be possible to call to\+\_\+string(variable). The variable should exist until the end of the game. \\
+\hline
+\end{DoxyParams}
+\index{Info@{Info}!draw@{draw}}
+\index{draw@{draw}!Info@{Info}}
+\subsubsection[{\texorpdfstring{draw(sf\+::\+Render\+Window \&window)}{draw(sf::RenderWindow &window)}}]{\setlength{\rightskip}{0pt plus 5cm}void Info\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{classInfo_af6ad526053db91850b6a09c03cc0ee4c}{}\label{classInfo_af6ad526053db91850b6a09c03cc0ee4c}
+
+
+Draws info to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & the render window \\
+\hline
+\end{DoxyParams}
+\index{Info@{Info}!has\+Item@{has\+Item}}
+\index{has\+Item@{has\+Item}!Info@{Info}}
+\subsubsection[{\texorpdfstring{has\+Item(string label)}{hasItem(string label)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Info\+::has\+Item (
+\begin{DoxyParamCaption}
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{classInfo_afaace7a1302cd4b4d2ef292a851cab4d}{}\label{classInfo_afaace7a1302cd4b4d2ef292a851cab4d}
+
+
+Checks if there exists any info with specified label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & the label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{Info@{Info}!log@{log}}
+\index{log@{log}!Info@{Info}}
+\subsubsection[{\texorpdfstring{log(ostream \&o)}{log(ostream &o)}}]{\setlength{\rightskip}{0pt plus 5cm}void Info\+::log (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{classInfo_a3d4c435598d5147cc606985deacae7ea}{}\label{classInfo_a3d4c435598d5147cc606985deacae7ea}
+
+
+Saves info for later replays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & the stream to save to \\
+\hline
+\end{DoxyParams}
+\index{Info@{Info}!remove\+Item@{remove\+Item}}
+\index{remove\+Item@{remove\+Item}!Info@{Info}}
+\subsubsection[{\texorpdfstring{remove\+Item(string label)}{removeItem(string label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Info\+::remove\+Item (
+\begin{DoxyParamCaption}
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{classInfo_af720d655559a164398971ef7f42feb22}{}\label{classInfo_af720d655559a164398971ef7f42feb22}
+
+
+Removes all infos with specified label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & the label \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Info_8h}{Info.\+h}\item 
+Info.\+cpp\end{DoxyCompactItemize}

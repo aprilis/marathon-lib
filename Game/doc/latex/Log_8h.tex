@@ -1,0 +1,69 @@
+\hypertarget{Log_8h}{}\section{Log.\+h File Reference}
+\label{Log_8h}\index{Log.\+h@{Log.\+h}}
+
+
+Contains the \hyperlink{classMultiStream}{Multi\+Stream} class.  
+
+
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for Log.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{Log_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{Log_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMultiStream}{Multi\+Stream}
+\begin{DoxyCompactList}\small\item\em Class used to combining multiple streams into one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Log_8h_aeea2c66c479cd8b6361b08371bed6966}{open\+\_\+log} (ofstream \&of, string dir)
+\begin{DoxyCompactList}\small\item\em Reopens the stream into a new file in a specified directory. If the directory doesn\textquotesingle{}t exist it is created. The name of the file is H\+H\+\_\+\+M\+M\+\_\+\+S\+S.\+log where HH, MM, SS is current hour, minute and second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMultiStream}{Multi\+Stream} \hyperlink{Log_8h_abcf4b357cfc0eadec527ad23142842d6}{mout}\hypertarget{Log_8h_abcf4b357cfc0eadec527ad23142842d6}{}\label{Log_8h_abcf4b357cfc0eadec527ad23142842d6}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMultiStream}{Multi\+Stream} which initially contains only cout. \end{DoxyCompactList}\item 
+\hyperlink{classMultiStream}{Multi\+Stream} \hyperlink{Log_8h_aeda56f358e2b30e8d8318ca0db6e3277}{merr}\hypertarget{Log_8h_aeda56f358e2b30e8d8318ca0db6e3277}{}\label{Log_8h_aeda56f358e2b30e8d8318ca0db6e3277}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMultiStream}{Multi\+Stream} which initially contains only cerr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the \hyperlink{classMultiStream}{Multi\+Stream} class. 
+
+
+
+\subsection{Function Documentation}
+\index{Log.\+h@{Log.\+h}!open\+\_\+log@{open\+\_\+log}}
+\index{open\+\_\+log@{open\+\_\+log}!Log.\+h@{Log.\+h}}
+\subsubsection[{\texorpdfstring{open\+\_\+log(ofstream \&of, string dir)}{open_log(ofstream &of, string dir)}}]{\setlength{\rightskip}{0pt plus 5cm}void open\+\_\+log (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{of, }
+\item[{string}]{dir}
+\end{DoxyParamCaption}
+)}\hypertarget{Log_8h_aeea2c66c479cd8b6361b08371bed6966}{}\label{Log_8h_aeea2c66c479cd8b6361b08371bed6966}
+
+
+Reopens the stream into a new file in a specified directory. If the directory doesn\textquotesingle{}t exist it is created. The name of the file is H\+H\+\_\+\+M\+M\+\_\+\+S\+S.\+log where HH, MM, SS is current hour, minute and second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em of} & the stream to reopen \\
+\hline
+{\em dir} & the name of the directory \\
+\hline
+\end{DoxyParams}

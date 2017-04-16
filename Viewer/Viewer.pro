@@ -8,7 +8,8 @@ SOURCES += main.cpp \
     Game.cpp \
     Info.cpp \
     StreamWindow.cpp \
-    GameState.cpp
+    GameState.cpp \
+    Common.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -17,6 +18,7 @@ HEADERS += \
     Info.h \
     Config.h \
     StreamWindow.h \
-    GameState.h
+    GameState.h \
+    Common.h
 
 LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system

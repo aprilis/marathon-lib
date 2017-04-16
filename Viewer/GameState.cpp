@@ -1,6 +1,7 @@
 #include "GameState.h"
 #include "Config.h"
 #include "Info.h"
+#include "Common.h"
 #include <iostream>
 
 ostream& operator<<(ostream &o, const sf::Vector2f &vec)
@@ -129,7 +130,7 @@ sf::Drawable* GameState::readConvex()
 sf::Drawable* GameState::readText()
 {
     auto text = new sf::Text();
-    text->setFont(Info::getFont());
+    text->setFont(commonFont);
     sf::Color color;
     string str;
     unsigned charSize;
@@ -198,7 +199,12 @@ int GameState::readLine()
         else if(key == "circle") drawable = readCircle();
         else if(key == "rect") drawable = readRect();
         else if(key == "convex") drawable = readConvex();
-        else cerr << "unknown key: " << key << endl;
+        else
+        {
+            cerr << "unknown key: " << key << endl;
+            getline(in, key);
+            return 0;
+        }
         drawables.emplace_back(unique_ptr<sf::Drawable>(drawable), transform);
     }
     return 0;

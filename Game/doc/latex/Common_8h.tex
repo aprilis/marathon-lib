@@ -1,0 +1,177 @@
+\hypertarget{Common_8h}{}\section{Common.\+h File Reference}
+\label{Common_8h}\index{Common.\+h@{Common.\+h}}
+
+
+Contains some useful functions and common\+Font.  
+
+
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+Include dependency graph for Common.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{Common_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{Common_8h_ae7ecf382f2e8c76a0196587e899a7c2c}{length} (const double \&x, const double \&y)\hypertarget{Common_8h_ae7ecf382f2e8c76a0196587e899a7c2c}{}\label{Common_8h_ae7ecf382f2e8c76a0196587e899a7c2c}
+
+\begin{DoxyCompactList}\small\item\em Returns length of a vector (x, y) \end{DoxyCompactList}\item 
+double \hyperlink{Common_8h_ad66815a0abad039f09fd6a2356e89045}{length\+Square} (const double \&x, const double \&y)\hypertarget{Common_8h_ad66815a0abad039f09fd6a2356e89045}{}\label{Common_8h_ad66815a0abad039f09fd6a2356e89045}
+
+\begin{DoxyCompactList}\small\item\em Returns length$^\wedge$2 of a vector (x, y) \end{DoxyCompactList}\item 
+double \hyperlink{Common_8h_a41027316c74f9e99c54ad60b110eb184}{dist} (const double \&x1, const double \&y1, const double \&x2, const double \&y2)\hypertarget{Common_8h_a41027316c74f9e99c54ad60b110eb184}{}\label{Common_8h_a41027316c74f9e99c54ad60b110eb184}
+
+\begin{DoxyCompactList}\small\item\em Returns euclidean distance between vectors (x1, y1) and (x2, y2) \end{DoxyCompactList}\item 
+double \hyperlink{Common_8h_a5d7508813f259ddb647ac23ed45d8dcf}{dist\+Square} (const double \&x1, const double \&y1, const double \&x2, const double \&y2)\hypertarget{Common_8h_a5d7508813f259ddb647ac23ed45d8dcf}{}\label{Common_8h_a5d7508813f259ddb647ac23ed45d8dcf}
+
+\begin{DoxyCompactList}\small\item\em Returns square of euclidean distance between vectors (x1, y1) and (x2, y2) \end{DoxyCompactList}\item 
+sf\+::\+Circle\+Shape \hyperlink{Common_8h_a3b0ff70843c24a762a5e9ce27a1cde4a}{make\+Circle} (float radius, float x, float y, sf\+::\+Color fill\+Color)
+\begin{DoxyCompactList}\small\item\em A factory function for creating circles. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \hyperlink{Common_8h_af09a4aaccf0c9edf4c7fa105c31f5881}{make\+Rectangle} (float width, float height, float x, float y, sf\+::\+Color fill\+Color)
+\begin{DoxyCompactList}\small\item\em A factory function for creating rectangles. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \hyperlink{Common_8h_ad7a729d93b3c6f41d7c5980569a56245}{make\+Line} (float x1, float y1, float x2, float y2, float thickness, sf\+::\+Color fill\+Color)
+\begin{DoxyCompactList}\small\item\em A factory function for creating lines. \end{DoxyCompactList}\item 
+sf\+::\+Text \hyperlink{Common_8h_a9ce5dca4edd098cdee910b3fbee82d63}{make\+Text} (string caption, int font\+Size, float x, float y, sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em A factory function for creating texts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font \hyperlink{Common_8h_a490e95f6a947282162bbe2896212a44e}{common\+Font}\hypertarget{Common_8h_a490e95f6a947282162bbe2896212a44e}{}\label{Common_8h_a490e95f6a947282162bbe2896212a44e}
+
+\begin{DoxyCompactList}\small\item\em You should use only this font in your program. It loads font from F\+O\+N\+T\+\_\+\+P\+A\+TH defined in \hyperlink{Config_8h_source}{Config.\+h}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains some useful functions and common\+Font. 
+
+
+
+\subsection{Function Documentation}
+\index{Common.\+h@{Common.\+h}!make\+Circle@{make\+Circle}}
+\index{make\+Circle@{make\+Circle}!Common.\+h@{Common.\+h}}
+\subsubsection[{\texorpdfstring{make\+Circle(float radius, float x, float y, sf\+::\+Color fill\+Color)}{makeCircle(float radius, float x, float y, sf::Color fillColor)}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Circle\+Shape make\+Circle (
+\begin{DoxyParamCaption}
+\item[{float}]{radius, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{sf\+::\+Color}]{fill\+Color}
+\end{DoxyParamCaption}
+)}\hypertarget{Common_8h_a3b0ff70843c24a762a5e9ce27a1cde4a}{}\label{Common_8h_a3b0ff70843c24a762a5e9ce27a1cde4a}
+
+
+A factory function for creating circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radius} & the radius of the circle \\
+\hline
+{\em x} & the x-\/coordinate of the circle\textquotesingle{}s center \\
+\hline
+{\em y} & the y-\/coordinate of the circle\textquotesingle{}s center \\
+\hline
+{\em fill\+Color} & the color of the circle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an sf\+::\+Circle\+Shape with center at (x, y) 
+\end{DoxyReturn}
+\index{Common.\+h@{Common.\+h}!make\+Line@{make\+Line}}
+\index{make\+Line@{make\+Line}!Common.\+h@{Common.\+h}}
+\subsubsection[{\texorpdfstring{make\+Line(float x1, float y1, float x2, float y2, float thickness, sf\+::\+Color fill\+Color)}{makeLine(float x1, float y1, float x2, float y2, float thickness, sf::Color fillColor)}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape make\+Line (
+\begin{DoxyParamCaption}
+\item[{float}]{x1, }
+\item[{float}]{y1, }
+\item[{float}]{x2, }
+\item[{float}]{y2, }
+\item[{float}]{thickness, }
+\item[{sf\+::\+Color}]{fill\+Color}
+\end{DoxyParamCaption}
+)}\hypertarget{Common_8h_ad7a729d93b3c6f41d7c5980569a56245}{}\label{Common_8h_ad7a729d93b3c6f41d7c5980569a56245}
+
+
+A factory function for creating lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & the x-\/coordinate of first end of line \\
+\hline
+{\em y1} & the y-\/coordinate of first end of line \\
+\hline
+{\em x2} & the x-\/coordinate of second end of line \\
+\hline
+{\em y2} & the y-\/coordinate of second end of line \\
+\hline
+{\em thickness} & the thickness of the line \\
+\hline
+{\em fill\+Color} & the color of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an sf\+::\+Rectangle\+Shape which is a line segment with specified thickness between (x1, y1) and (x2, y2) 
+\end{DoxyReturn}
+\index{Common.\+h@{Common.\+h}!make\+Rectangle@{make\+Rectangle}}
+\index{make\+Rectangle@{make\+Rectangle}!Common.\+h@{Common.\+h}}
+\subsubsection[{\texorpdfstring{make\+Rectangle(float width, float height, float x, float y, sf\+::\+Color fill\+Color)}{makeRectangle(float width, float height, float x, float y, sf::Color fillColor)}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape make\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{float}]{width, }
+\item[{float}]{height, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{sf\+::\+Color}]{fill\+Color}
+\end{DoxyParamCaption}
+)}\hypertarget{Common_8h_af09a4aaccf0c9edf4c7fa105c31f5881}{}\label{Common_8h_af09a4aaccf0c9edf4c7fa105c31f5881}
+
+
+A factory function for creating rectangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the rect \\
+\hline
+{\em height} & the height of the rect \\
+\hline
+{\em x} & the x-\/coordinate of the rect\textquotesingle{}s center \\
+\hline
+{\em y} & the y-\/coordinate of the rect\textquotesingle{}s center \\
+\hline
+{\em fill\+Color} & the color of the rect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an sf\+::\+Rectangle\+Shape with center at (x, y) 
+\end{DoxyReturn}
+\index{Common.\+h@{Common.\+h}!make\+Text@{make\+Text}}
+\index{make\+Text@{make\+Text}!Common.\+h@{Common.\+h}}
+\subsubsection[{\texorpdfstring{make\+Text(string caption, int font\+Size, float x, float y, sf\+::\+Color color)}{makeText(string caption, int fontSize, float x, float y, sf::Color color)}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Text make\+Text (
+\begin{DoxyParamCaption}
+\item[{string}]{caption, }
+\item[{int}]{font\+Size, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{sf\+::\+Color}]{color}
+\end{DoxyParamCaption}
+)}\hypertarget{Common_8h_a9ce5dca4edd098cdee910b3fbee82d63}{}\label{Common_8h_a9ce5dca4edd098cdee910b3fbee82d63}
+
+
+A factory function for creating texts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caption} & the text to be displayed \\
+\hline
+{\em font\+Size} & the size of characters \\
+\hline
+{\em x} & the x-\/coordinate of the center of text \\
+\hline
+{\em y} & the y-\/coordinate of the center of text \\
+\hline
+{\em color} & the color of text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an sf\+::\+Text with center at (x, y) 
+\end{DoxyReturn}

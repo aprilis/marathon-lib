@@ -1,0 +1,191 @@
+\hypertarget{classGame}{}\section{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+
+
+The main \hyperlink{classGame}{Game} class. You should make a derived class from it.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+
+
+Collaboration diagram for Game\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classGame__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classGame_a34b9f33fe8fb922224b95e50795629c2}{get\+Mouse\+Position} ()\hypertarget{classGame_a34b9f33fe8fb922224b95e50795629c2}{}\label{classGame_a34b9f33fe8fb922224b95e50795629c2}
+
+\begin{DoxyCompactList}\small\item\em Returns mouse cursor position after applying camera transform. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a401542d59b5346cba650367e548626ce}{move\+Camera} (float cx, float cy, float zoom=1.f)
+\begin{DoxyCompactList}\small\item\em Moves camera so that its centered at (cx, cy) and zoomed with specified factor. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}{run} ()\hypertarget{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}{}\label{classGame_a1ab78f5ed0d5ea879157357cf2fb2afa}
+
+\begin{DoxyCompactList}\small\item\em This function simply runs the game until the main window is closed or an exception fired. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classGame_a17b8b67b1ebc97d05b97925bfe53b61f}{add\+Drawable} (const T \&x)\hypertarget{classGame_a17b8b67b1ebc97d05b97925bfe53b61f}{}\label{classGame_a17b8b67b1ebc97d05b97925bfe53b61f}
+
+\begin{DoxyCompactList}\small\item\em This function simply calls game\+State.\+add\+Drawable(x) \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a52ebfe7608394f1281efb3032d059967}{show\+Output\+Window} ()\hypertarget{classGame_a52ebfe7608394f1281efb3032d059967}{}\label{classGame_a52ebfe7608394f1281efb3032d059967}
+
+\begin{DoxyCompactList}\small\item\em Shows window with content of mout and merr. \end{DoxyCompactList}\item 
+int \hyperlink{classGame_a86c625ebc5fedb4072d007ed42d89671}{get\+Turns\+Left} ()\hypertarget{classGame_a86c625ebc5fedb4072d007ed42d89671}{}\label{classGame_a86c625ebc5fedb4072d007ed42d89671}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of turns left. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGame_a03387676134dd331f4a1902349926816}{draw} ()\hypertarget{classGame_a03387676134dd331f4a1902349926816}{}\label{classGame_a03387676134dd331f4a1902349926816}
+
+\begin{DoxyCompactList}\small\item\em You can override this function for custom real-\/time drawing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_a51e7f9bfbb9a2d29525b6ea009ebc345}{update} ()\hypertarget{classGame_a51e7f9bfbb9a2d29525b6ea009ebc345}{}\label{classGame_a51e7f9bfbb9a2d29525b6ea009ebc345}
+
+\begin{DoxyCompactList}\small\item\em You can override this function for custom real-\/time updates. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_aab44617eccac431efb47e8737740b9f6}{sync} ()\hypertarget{classGame_aab44617eccac431efb47e8737740b9f6}{}\label{classGame_aab44617eccac431efb47e8737740b9f6}
+
+\begin{DoxyCompactList}\small\item\em This function should contain all synchronisation with server. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_a91de9baa89af357070ccee44c6f0a21e}{first\+Sync} ()\hypertarget{classGame_a91de9baa89af357070ccee44c6f0a21e}{}\label{classGame_a91de9baa89af357070ccee44c6f0a21e}
+
+\begin{DoxyCompactList}\small\item\em You can override this function if you want the first sync to behave differently. Otherwise normal \hyperlink{classGame_aab44617eccac431efb47e8737740b9f6}{sync()} will be called. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_adcfb81710141ae68ff1e4571aaed2555}{send\+Commands} ()
+\begin{DoxyCompactList}\small\item\em You can write sending commands code in this function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_a0e97a7944c35890bfec2910074cf5f23}{my\+Process\+Event} (const sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em You can override this function for event handling. However, it doesn\textquotesingle{}t handle mouse events. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_a45559f72d8a850d2acc62f6439400e7e}{left\+Click} (sf\+::\+Vector2f position)
+\begin{DoxyCompactList}\small\item\em This function is called whenever the user clicks left mouse button. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_a1b9835bd630043b37243c43b6d46f73a}{right\+Click} (sf\+::\+Vector2f position)
+\begin{DoxyCompactList}\small\item\em This function is called whenever the user clicks right mouse button. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_a4f239a4d2ac903b55620b7f52e4d2fe0}{selected\+Rect} (sf\+::\+Float\+Rect rect)
+\begin{DoxyCompactList}\small\item\em This function is called after selecting a rectangle area with mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \hyperlink{classGame_a223de215aeb661cd423ac145756cc730}{window}\hypertarget{classGame_a223de215aeb661cd423ac145756cc730}{}\label{classGame_a223de215aeb661cd423ac145756cc730}
+
+\begin{DoxyCompactList}\small\item\em The window. You can use it to call window.\+draw(something) \end{DoxyCompactList}\item 
+int \hyperlink{classGame_a116a07a6c0209b4ea22c465892b37ac6}{turns\+Left} = 1e9\hypertarget{classGame_a116a07a6c0209b4ea22c465892b37ac6}{}\label{classGame_a116a07a6c0209b4ea22c465892b37ac6}
+
+\begin{DoxyCompactList}\small\item\em The turns left counter. It updates every turn. \end{DoxyCompactList}\item 
+\hyperlink{classGameState}{Game\+State} \hyperlink{classGame_a4573dd85e0711a78cc27eb0b51c79f44}{game\+State}\hypertarget{classGame_a4573dd85e0711a78cc27eb0b51c79f44}{}\label{classGame_a4573dd85e0711a78cc27eb0b51c79f44}
+
+\begin{DoxyCompactList}\small\item\em The game state. It contains all drawables and logs. Can be used to call game\+State.\+add\+Drawable(something) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main \hyperlink{classGame}{Game} class. You should make a derived class from it. 
+
+\subsection{Member Function Documentation}
+\index{Game@{Game}!left\+Click@{left\+Click}}
+\index{left\+Click@{left\+Click}!Game@{Game}}
+\subsubsection[{\texorpdfstring{left\+Click(sf\+::\+Vector2f position)}{leftClick(sf::Vector2f position)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\+::left\+Click (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classGame_a45559f72d8a850d2acc62f6439400e7e}{}\label{classGame_a45559f72d8a850d2acc62f6439400e7e}
+
+
+This function is called whenever the user clicks left mouse button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the coordinates of mouse pointer after applying camera transform \\
+\hline
+\end{DoxyParams}
+\index{Game@{Game}!move\+Camera@{move\+Camera}}
+\index{move\+Camera@{move\+Camera}!Game@{Game}}
+\subsubsection[{\texorpdfstring{move\+Camera(float cx, float cy, float zoom=1.\+f)}{moveCamera(float cx, float cy, float zoom=1.f)}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::move\+Camera (
+\begin{DoxyParamCaption}
+\item[{float}]{cx, }
+\item[{float}]{cy, }
+\item[{float}]{zoom = {\ttfamily 1.f}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGame_a401542d59b5346cba650367e548626ce}{}\label{classGame_a401542d59b5346cba650367e548626ce}
+
+
+Moves camera so that its centered at (cx, cy) and zoomed with specified factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cx} & the x-\/coordinate of center \\
+\hline
+{\em cy} & the y-\/coordinate of center \\
+\hline
+{\em zoom} & the zoom factor \\
+\hline
+\end{DoxyParams}
+\index{Game@{Game}!my\+Process\+Event@{my\+Process\+Event}}
+\index{my\+Process\+Event@{my\+Process\+Event}!Game@{Game}}
+\subsubsection[{\texorpdfstring{my\+Process\+Event(const sf\+::\+Event \&event)}{myProcessEvent(const sf::Event &event)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\+::my\+Process\+Event (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classGame_a0e97a7944c35890bfec2910074cf5f23}{}\label{classGame_a0e97a7944c35890bfec2910074cf5f23}
+
+
+You can override this function for event handling. However, it doesn\textquotesingle{}t handle mouse events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the sfml event \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classGame_a45559f72d8a850d2acc62f6439400e7e}{left\+Click}, \hyperlink{classGame_a1b9835bd630043b37243c43b6d46f73a}{right\+Click}, \hyperlink{classGame_a4f239a4d2ac903b55620b7f52e4d2fe0}{selected\+Rect} 
+\end{DoxySeeAlso}
+\index{Game@{Game}!right\+Click@{right\+Click}}
+\index{right\+Click@{right\+Click}!Game@{Game}}
+\subsubsection[{\texorpdfstring{right\+Click(sf\+::\+Vector2f position)}{rightClick(sf::Vector2f position)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\+::right\+Click (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classGame_a1b9835bd630043b37243c43b6d46f73a}{}\label{classGame_a1b9835bd630043b37243c43b6d46f73a}
+
+
+This function is called whenever the user clicks right mouse button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the coordinates of mouse pointer after applying camera transform \\
+\hline
+\end{DoxyParams}
+\index{Game@{Game}!selected\+Rect@{selected\+Rect}}
+\index{selected\+Rect@{selected\+Rect}!Game@{Game}}
+\subsubsection[{\texorpdfstring{selected\+Rect(sf\+::\+Float\+Rect rect)}{selectedRect(sf::FloatRect rect)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\+::selected\+Rect (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Float\+Rect}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classGame_a4f239a4d2ac903b55620b7f52e4d2fe0}{}\label{classGame_a4f239a4d2ac903b55620b7f52e4d2fe0}
+
+
+This function is called after selecting a rectangle area with mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & the selected area \\
+\hline
+\end{DoxyParams}
+\index{Game@{Game}!send\+Commands@{send\+Commands}}
+\index{send\+Commands@{send\+Commands}!Game@{Game}}
+\subsubsection[{\texorpdfstring{send\+Commands()}{sendCommands()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\+::send\+Commands (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classGame_adcfb81710141ae68ff1e4571aaed2555}{}\label{classGame_adcfb81710141ae68ff1e4571aaed2555}
+
+
+You can write sending commands code in this function. 
+
+When S\+E\+N\+D\+\_\+\+C\+O\+M\+M\+A\+N\+D\+S\+\_\+\+L\+A\+TE if off it is run right after \hyperlink{classGame_aab44617eccac431efb47e8737740b9f6}{sync()}. Otherwise it is run after turn\+Duration which is either specified or measured automatically (not recommended)
+
+C\+A\+U\+T\+I\+ON\+: this function is not run after \hyperlink{classGame_a91de9baa89af357070ccee44c6f0a21e}{first\+Sync()} (you can do it manually) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Game_8h}{Game.\+h}\item 
+Game.\+cpp\end{DoxyCompactItemize}

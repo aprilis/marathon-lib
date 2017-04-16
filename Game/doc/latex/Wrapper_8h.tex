@@ -1,0 +1,96 @@
+\hypertarget{Wrapper_8h}{}\section{Wrapper.\+h File Reference}
+\label{Wrapper_8h}\index{Wrapper.\+h@{Wrapper.\+h}}
+
+
+Contains a few useful functions for communication with server.  
+
+
+{\ttfamily \#include \char`\"{}C\+Tcp\+Fwd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Log.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for Wrapper.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Wrapper_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Wrapper_8h_a97c4ae32c616eca02a42815ec76ecad6}{connect} (string host, int port, string login, string password)
+\begin{DoxyCompactList}\small\item\em Initializes T\+CP connection. After calling this function, stdout sends output to the server and stdin reads input from it. \end{DoxyCompactList}\item 
+bool \hyperlink{Wrapper_8h_a28b4da67afbeadc64a92aa05d4c05f00}{send\+Message} (string message=string())
+\begin{DoxyCompactList}\small\item\em Writes message followed by endline to the stdout, and then checks if the response is OK or handles errors. \end{DoxyCompactList}\item 
+void \hyperlink{Wrapper_8h_aa3b21853f890838c88d047d6c2786917}{wait} ()\hypertarget{Wrapper_8h_aa3b21853f890838c88d047d6c2786917}{}\label{Wrapper_8h_aa3b21853f890838c88d047d6c2786917}
+
+\begin{DoxyCompactList}\small\item\em Sends W\+A\+IT message and reads 2 O\+Ks. \end{DoxyCompactList}\item 
+int \hyperlink{Wrapper_8h_a6b883c8cf0bdd74badc0fd04c7e94ca9}{turns\+Left} ()
+\begin{DoxyCompactList}\small\item\em Calls T\+U\+R\+N\+S\+\_\+\+L\+E\+F\+T\+\_\+\+C\+O\+M\+M\+A\+ND (defined in \hyperlink{Config_8h_source}{Config.\+h}) and reads the response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains a few useful functions for communication with server. 
+
+
+
+\subsection{Function Documentation}
+\index{Wrapper.\+h@{Wrapper.\+h}!connect@{connect}}
+\index{connect@{connect}!Wrapper.\+h@{Wrapper.\+h}}
+\subsubsection[{\texorpdfstring{connect(string host, int port, string login, string password)}{connect(string host, int port, string login, string password)}}]{\setlength{\rightskip}{0pt plus 5cm}void connect (
+\begin{DoxyParamCaption}
+\item[{string}]{host, }
+\item[{int}]{port, }
+\item[{string}]{login, }
+\item[{string}]{password}
+\end{DoxyParamCaption}
+)}\hypertarget{Wrapper_8h_a97c4ae32c616eca02a42815ec76ecad6}{}\label{Wrapper_8h_a97c4ae32c616eca02a42815ec76ecad6}
+
+
+Initializes T\+CP connection. After calling this function, stdout sends output to the server and stdin reads input from it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & the name of the host \\
+\hline
+{\em port} & the port number (integer) \\
+\hline
+{\em login} & team login \\
+\hline
+{\em password} & team password \\
+\hline
+\end{DoxyParams}
+\index{Wrapper.\+h@{Wrapper.\+h}!send\+Message@{send\+Message}}
+\index{send\+Message@{send\+Message}!Wrapper.\+h@{Wrapper.\+h}}
+\subsubsection[{\texorpdfstring{send\+Message(string message=string())}{sendMessage(string message=string())}}]{\setlength{\rightskip}{0pt plus 5cm}bool send\+Message (
+\begin{DoxyParamCaption}
+\item[{string}]{message = {\ttfamily string()}}
+\end{DoxyParamCaption}
+)}\hypertarget{Wrapper_8h_a28b4da67afbeadc64a92aa05d4c05f00}{}\label{Wrapper_8h_a28b4da67afbeadc64a92aa05d4c05f00}
+
+
+Writes message followed by endline to the stdout, and then checks if the response is OK or handles errors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if server returned OK, false otherwise 
+\end{DoxyReturn}
+\index{Wrapper.\+h@{Wrapper.\+h}!turns\+Left@{turns\+Left}}
+\index{turns\+Left@{turns\+Left}!Wrapper.\+h@{Wrapper.\+h}}
+\subsubsection[{\texorpdfstring{turns\+Left()}{turnsLeft()}}]{\setlength{\rightskip}{0pt plus 5cm}int turns\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{Wrapper_8h_a6b883c8cf0bdd74badc0fd04c7e94ca9}{}\label{Wrapper_8h_a6b883c8cf0bdd74badc0fd04c7e94ca9}
+
+
+Calls T\+U\+R\+N\+S\+\_\+\+L\+E\+F\+T\+\_\+\+C\+O\+M\+M\+A\+ND (defined in \hyperlink{Config_8h_source}{Config.\+h}) and reads the response. 
+
+\begin{DoxyReturn}{Returns}
+the number of turns left 
+\end{DoxyReturn}

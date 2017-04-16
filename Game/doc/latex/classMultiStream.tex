@@ -1,0 +1,76 @@
+\hypertarget{classMultiStream}{}\section{Multi\+Stream Class Reference}
+\label{classMultiStream}\index{Multi\+Stream@{Multi\+Stream}}
+
+
+Class used to combining multiple streams into one.  
+
+
+
+
+{\ttfamily \#include $<$Log.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMultiStream_ac428de0a7d172e4be3ab4d8fc8f05862}{Multi\+Stream} ()=default\hypertarget{classMultiStream_ac428de0a7d172e4be3ab4d8fc8f05862}{}\label{classMultiStream_ac428de0a7d172e4be3ab4d8fc8f05862}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMultiStream_a012f0f1cdbfe8bd5c42748c808377485}{Multi\+Stream} (initializer\+\_\+list$<$ ostream $\ast$ $>$ list)
+\begin{DoxyCompactList}\small\item\em Initialization of multistream with a list of streams. \end{DoxyCompactList}\item 
+void \hyperlink{classMultiStream_aa0da819a03d7788c8151a364f2456f55}{add\+Stream} (ostream \&str)
+\begin{DoxyCompactList}\small\item\em Adds a stream. \end{DoxyCompactList}\item 
+void \hyperlink{classMultiStream_a360d75d172117c74c7e056581889a233}{clear} ()\hypertarget{classMultiStream_a360d75d172117c74c7e056581889a233}{}\label{classMultiStream_a360d75d172117c74c7e056581889a233}
+
+\begin{DoxyCompactList}\small\item\em Removes all streams. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\\hyperlink{classMultiStream}{Multi\+Stream} \& \hyperlink{classMultiStream_a188e5ca0d44395b5585dc5a953c2f52b}{operator$<$$<$} (const T \&obj)\hypertarget{classMultiStream_a188e5ca0d44395b5585dc5a953c2f52b}{}\label{classMultiStream_a188e5ca0d44395b5585dc5a953c2f52b}
+
+\begin{DoxyCompactList}\small\item\em writes obj into all streams (unfortunately, manipulators like endl don\textquotesingle{}t work)  the object to write \end{DoxyCompactList}\item 
+void \hyperlink{classMultiStream_aab0ee017e228867837ab42405293e999}{flush} ()\hypertarget{classMultiStream_aab0ee017e228867837ab42405293e999}{}\label{classMultiStream_aab0ee017e228867837ab42405293e999}
+
+\begin{DoxyCompactList}\small\item\em Flushes all streams. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to combining multiple streams into one. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Multi\+Stream@{Multi\+Stream}!Multi\+Stream@{Multi\+Stream}}
+\index{Multi\+Stream@{Multi\+Stream}!Multi\+Stream@{Multi\+Stream}}
+\subsubsection[{\texorpdfstring{Multi\+Stream(initializer\+\_\+list$<$ ostream $\ast$ $>$ list)}{MultiStream(initializer_list< ostream * > list)}}]{\setlength{\rightskip}{0pt plus 5cm}Multi\+Stream\+::\+Multi\+Stream (
+\begin{DoxyParamCaption}
+\item[{initializer\+\_\+list$<$ ostream $\ast$ $>$}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMultiStream_a012f0f1cdbfe8bd5c42748c808377485}{}\label{classMultiStream_a012f0f1cdbfe8bd5c42748c808377485}
+
+
+Initialization of multistream with a list of streams. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & list of ofstream pointers \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Multi\+Stream@{Multi\+Stream}!add\+Stream@{add\+Stream}}
+\index{add\+Stream@{add\+Stream}!Multi\+Stream@{Multi\+Stream}}
+\subsubsection[{\texorpdfstring{add\+Stream(ostream \&str)}{addStream(ostream &str)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Stream\+::add\+Stream (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMultiStream_aa0da819a03d7788c8151a364f2456f55}{}\label{classMultiStream_aa0da819a03d7788c8151a364f2456f55}
+
+
+Adds a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & stream to add \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Log_8h}{Log.\+h}\end{DoxyCompactItemize}

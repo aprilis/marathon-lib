@@ -1,0 +1,141 @@
+\begin{theindex}
+
+  \item {add\+Drawable}
+    \subitem {Game\+State}, \hyperpage{8}
+  \item {add\+Function}
+    \subitem {Info}, \hyperpage{12}
+  \item {add\+Item}
+    \subitem {Info}, \hyperpage{13}
+  \item {add\+Stream}
+    \subitem {Multi\+Stream}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Common.\+h}, \hyperpage{17}
+    \subitem {make\+Circle}, \hyperpage{18}
+    \subitem {make\+Line}, \hyperpage{18}
+    \subitem {make\+Rectangle}, \hyperpage{18}
+    \subitem {make\+Text}, \hyperpage{19}
+  \item {connect}
+    \subitem {Wrapper.\+h}, \hyperpage{25}
+
+  \indexspace
+
+  \item {draw}
+    \subitem {Hex\+Map}, \hyperpage{10}
+    \subitem {Info}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Game}, \hyperpage{5}
+    \subitem {left\+Click}, \hyperpage{6}
+    \subitem {move\+Camera}, \hyperpage{6}
+    \subitem {my\+Process\+Event}, \hyperpage{7}
+    \subitem {right\+Click}, \hyperpage{7}
+    \subitem {selected\+Rect}, \hyperpage{7}
+    \subitem {send\+Commands}, \hyperpage{7}
+  \item {Game.\+h}, \hyperpage{19}
+  \item {Game\+State}, \hyperpage{8}
+    \subitem {add\+Drawable}, \hyperpage{8}
+    \subitem {Game\+State}, \hyperpage{8}
+  \item {Game\+State.\+h}, \hyperpage{20}
+  \item {get\+Color}
+    \subitem {Hex\+Map}, \hyperpage{10}
+  \item {get\+Hex}
+    \subitem {Hex\+Map}, \hyperpage{10}
+  \item {get\+Neighbours}
+    \subitem {Hex\+Map}, \hyperpage{11}
+  \item {get\+Position}
+    \subitem {Hex\+Map}, \hyperpage{11}
+
+  \indexspace
+
+  \item {has\+Item}
+    \subitem {Info}, \hyperpage{13}
+  \item {Hex\+Map}, \hyperpage{9}
+    \subitem {draw}, \hyperpage{10}
+    \subitem {get\+Color}, \hyperpage{10}
+    \subitem {get\+Hex}, \hyperpage{10}
+    \subitem {get\+Neighbours}, \hyperpage{11}
+    \subitem {get\+Position}, \hyperpage{11}
+    \subitem {Hex\+Map}, \hyperpage{9}
+    \subitem {init}, \hyperpage{11}
+    \subitem {set\+Color}, \hyperpage{11}
+  \item {Hex\+Map.\+h}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Info}, \hyperpage{12}
+    \subitem {add\+Function}, \hyperpage{12}
+    \subitem {add\+Item}, \hyperpage{13}
+    \subitem {draw}, \hyperpage{13}
+    \subitem {has\+Item}, \hyperpage{13}
+    \subitem {log}, \hyperpage{13}
+    \subitem {remove\+Item}, \hyperpage{13}
+  \item {Info.\+h}, \hyperpage{22}
+  \item {init}
+    \subitem {Hex\+Map}, \hyperpage{11}
+
+  \indexspace
+
+  \item {left\+Click}
+    \subitem {Game}, \hyperpage{6}
+  \item {log}
+    \subitem {Info}, \hyperpage{13}
+  \item {Log.\+h}, \hyperpage{23}
+    \subitem {open\+\_\+log}, \hyperpage{24}
+
+  \indexspace
+
+  \item {make\+Circle}
+    \subitem {Common.\+h}, \hyperpage{18}
+  \item {make\+Line}
+    \subitem {Common.\+h}, \hyperpage{18}
+  \item {make\+Rectangle}
+    \subitem {Common.\+h}, \hyperpage{18}
+  \item {make\+Text}
+    \subitem {Common.\+h}, \hyperpage{19}
+  \item {move\+Camera}
+    \subitem {Game}, \hyperpage{6}
+  \item {Multi\+Stream}, \hyperpage{14}
+    \subitem {add\+Stream}, \hyperpage{15}
+    \subitem {Multi\+Stream}, \hyperpage{14}
+  \item {my\+Process\+Event}
+    \subitem {Game}, \hyperpage{7}
+
+  \indexspace
+
+  \item {open\+\_\+log}
+    \subitem {Log.\+h}, \hyperpage{24}
+
+  \indexspace
+
+  \item {remove\+Item}
+    \subitem {Info}, \hyperpage{13}
+  \item {right\+Click}
+    \subitem {Game}, \hyperpage{7}
+
+  \indexspace
+
+  \item {selected\+Rect}
+    \subitem {Game}, \hyperpage{7}
+  \item {send\+Commands}
+    \subitem {Game}, \hyperpage{7}
+  \item {send\+Message}
+    \subitem {Wrapper.\+h}, \hyperpage{25}
+  \item {set\+Color}
+    \subitem {Hex\+Map}, \hyperpage{11}
+
+  \indexspace
+
+  \item {turns\+Left}
+    \subitem {Wrapper.\+h}, \hyperpage{25}
+
+  \indexspace
+
+  \item {Wrapper.\+h}, \hyperpage{24}
+    \subitem {connect}, \hyperpage{25}
+    \subitem {send\+Message}, \hyperpage{25}
+    \subitem {turns\+Left}, \hyperpage{25}
+
+\end{theindex}

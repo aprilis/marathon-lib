@@ -1,0 +1,63 @@
+\hypertarget{classGameState}{}\section{Game\+State Class Reference}
+\label{classGameState}\index{Game\+State@{Game\+State}}
+
+
+This class contains the state of the game. It draws it, shows the output window and saves game for further viewing.  
+
+
+
+
+{\ttfamily \#include $<$Game\+State.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameState_a8114bd207c6d773fc0daa74044bbc413}{Game\+State} (string title=\char`\"{}Output\char`\"{})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGameState}{Game\+State}. \end{DoxyCompactList}\item 
+void \hyperlink{classGameState_a674de8e50152a5e0bfa55497d1702146}{show\+Window} ()\hypertarget{classGameState_a674de8e50152a5e0bfa55497d1702146}{}\label{classGameState_a674de8e50152a5e0bfa55497d1702146}
+
+\begin{DoxyCompactList}\small\item\em Shows the window with the content of mout and merr. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classGameState_a0727ed66fcae2802005c59eada1eee46}{add\+Drawable} (const T \&x)
+\begin{DoxyCompactList}\small\item\em Adds x to the drawables list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class contains the state of the game. It draws it, shows the output window and saves game for further viewing. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Game\+State@{Game\+State}!Game\+State@{Game\+State}}
+\index{Game\+State@{Game\+State}!Game\+State@{Game\+State}}
+\subsubsection[{\texorpdfstring{Game\+State(string title=""Output"")}{GameState(string title="Output")}}]{\setlength{\rightskip}{0pt plus 5cm}Game\+State\+::\+Game\+State (
+\begin{DoxyParamCaption}
+\item[{string}]{title = {\ttfamily \char`\"{}Output\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameState_a8114bd207c6d773fc0daa74044bbc413}{}\label{classGameState_a8114bd207c6d773fc0daa74044bbc413}
+
+
+\hyperlink{classGameState}{Game\+State}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The output window\textquotesingle{}s title \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Game\+State@{Game\+State}!add\+Drawable@{add\+Drawable}}
+\index{add\+Drawable@{add\+Drawable}!Game\+State@{Game\+State}}
+\subsubsection[{\texorpdfstring{add\+Drawable(const T \&x)}{addDrawable(const T &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void Game\+State\+::add\+Drawable (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classGameState_a0727ed66fcae2802005c59eada1eee46}{}\label{classGameState_a0727ed66fcae2802005c59eada1eee46}
+
+
+Adds x to the drawables list. 
+
+The drawable can be one of the following types\+: sf\+::\+Circle\+Shape, sf\+::\+Rectangle\+Shape, sf\+::\+Convex\+Shape, sf\+::\+Text. It is shown until the next turn and saved for later replays 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{GameState_8h}{Game\+State.\+h}\item 
+Game\+State.\+cpp\end{DoxyCompactItemize}

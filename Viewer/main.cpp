@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     setlocale(LC_NUMERIC,"C");
 
-    Info::loadFont("font.ttf");
     Game game(800, 600, argv[1]);
     game.run();
     return 0;

@@ -13,4 +13,7 @@
 //czy ma byc pokazywane okno pokazujace zawartosc strumieni
 #define STREAM_WINDOW
 
+//sciezka do pliku z czcionka
+#define FONT_PATH "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf"
+
 #endif // CONFIG_H

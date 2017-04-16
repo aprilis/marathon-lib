@@ -1,0 +1,239 @@
+\hypertarget{classHexMap}{}\section{Hex\+Map Class Reference}
+\label{classHexMap}\index{Hex\+Map@{Hex\+Map}}
+
+
+Useful class for using hex maps.  
+
+
+
+
+{\ttfamily \#include $<$Hex\+Map.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHexMap_a978943df7d0597662f77e116b47592e2}{Hex\+Map} ()=default\hypertarget{classHexMap_a978943df7d0597662f77e116b47592e2}{}\label{classHexMap_a978943df7d0597662f77e116b47592e2}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHexMap_a5c7c0b881e9f6671d6460604979a6809}{Hex\+Map} (int rows, int columns, float size=30.f)
+\begin{DoxyCompactList}\small\item\em Simply calls init(rows, colums, size) \end{DoxyCompactList}\item 
+void \hyperlink{classHexMap_aab6bd6a4e324a2cc3e22f4e1c5143d4c}{init} (int rows, int columns, float size=30.f)
+\begin{DoxyCompactList}\small\item\em Initializes the map. Initially, all hexes are white. \end{DoxyCompactList}\item 
+int \hyperlink{classHexMap_a5002c49a38866cba5dee83a18310948d}{row\+Count} () const \hypertarget{classHexMap_a5002c49a38866cba5dee83a18310948d}{}\label{classHexMap_a5002c49a38866cba5dee83a18310948d}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of rows. \end{DoxyCompactList}\item 
+int \hyperlink{classHexMap_a1b66281a5f11995aa2e02b06cd758372}{col\+Count} () const \hypertarget{classHexMap_a1b66281a5f11995aa2e02b06cd758372}{}\label{classHexMap_a1b66281a5f11995aa2e02b06cd758372}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of columns. \end{DoxyCompactList}\item 
+void \hyperlink{classHexMap_a762097ad75f35ffe7de5e2db716e143f}{set\+Color} (int row, int column, sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the color of a selected hex. \end{DoxyCompactList}\item 
+sf\+::\+Color \hyperlink{classHexMap_a8c695db928bdbef6854c9a66d7c906af}{get\+Color} (int row, int column) const 
+\begin{DoxyCompactList}\small\item\em Gets the color of a selected hex. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classHexMap_a62255c5a8e3c2063f5000616c80d0caf}{get\+Position} (int row, int column) const 
+\begin{DoxyCompactList}\small\item\em Returns position of the center of a selected hex. \end{DoxyCompactList}\item 
+pair$<$ int, int $>$ \hyperlink{classHexMap_add0ef8655711db2cd92d0a1b561cfc5e}{get\+Hex} (sf\+::\+Vector2f position) const 
+\begin{DoxyCompactList}\small\item\em Returns pair of (row, column) coords of the hex which contains the position. \end{DoxyCompactList}\item 
+void \hyperlink{classHexMap_ac6b12f5051efc7bfc1d2d094297948ab}{draw} (\hyperlink{classGameState}{Game\+State} \&game\+State) const 
+\begin{DoxyCompactList}\small\item\em adds all drawables to the game\+State \end{DoxyCompactList}\item 
+void \hyperlink{classHexMap_ab5b7234db17020e004dd11eef1e71a8c}{draw} (sf\+::\+Render\+Window \&window) const 
+\begin{DoxyCompactList}\small\item\em draws the map directly to the window \end{DoxyCompactList}\item 
+vector$<$ pair$<$ int, int $>$ $>$ \hyperlink{classHexMap_ab5b3eddce752a5e6c75d71223b289c24}{get\+Neighbours} (int row, int column) const 
+\begin{DoxyCompactList}\small\item\em Returns position of each neighbour of the hex on (row, column) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Useful class for using hex maps. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hex\+Map@{Hex\+Map}!Hex\+Map@{Hex\+Map}}
+\index{Hex\+Map@{Hex\+Map}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{Hex\+Map(int rows, int columns, float size=30.\+f)}{HexMap(int rows, int columns, float size=30.f)}}]{\setlength{\rightskip}{0pt plus 5cm}Hex\+Map\+::\+Hex\+Map (
+\begin{DoxyParamCaption}
+\item[{int}]{rows, }
+\item[{int}]{columns, }
+\item[{float}]{size = {\ttfamily 30.f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classHexMap_a5c7c0b881e9f6671d6460604979a6809}{}\label{classHexMap_a5c7c0b881e9f6671d6460604979a6809}
+
+
+Simply calls init(rows, colums, size) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & the number of rows \\
+\hline
+{\em columns} & the number of columns \\
+\hline
+{\em size} & the size of one hex (2 $\ast$ radius) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Hex\+Map@{Hex\+Map}!draw@{draw}}
+\index{draw@{draw}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{draw(\+Game\+State \&game\+State) const }{draw(GameState &gameState) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Hex\+Map\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+State} \&}]{game\+State}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHexMap_ac6b12f5051efc7bfc1d2d094297948ab}{}\label{classHexMap_ac6b12f5051efc7bfc1d2d094297948ab}
+
+
+adds all drawables to the game\+State 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+State} & the game state \\
+\hline
+\end{DoxyParams}
+\index{Hex\+Map@{Hex\+Map}!draw@{draw}}
+\index{draw@{draw}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{draw(sf\+::\+Render\+Window \&window) const }{draw(sf::RenderWindow &window) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Hex\+Map\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHexMap_ab5b7234db17020e004dd11eef1e71a8c}{}\label{classHexMap_ab5b7234db17020e004dd11eef1e71a8c}
+
+
+draws the map directly to the window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & the render window \\
+\hline
+\end{DoxyParams}
+\index{Hex\+Map@{Hex\+Map}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{get\+Color(int row, int column) const }{getColor(int row, int column) const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Color Hex\+Map\+::get\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHexMap_a8c695db928bdbef6854c9a66d7c906af}{}\label{classHexMap_a8c695db928bdbef6854c9a66d7c906af}
+
+
+Gets the color of a selected hex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row of a hex \\
+\hline
+{\em column} & the column of a hex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color of the hex 
+\end{DoxyReturn}
+\index{Hex\+Map@{Hex\+Map}!get\+Hex@{get\+Hex}}
+\index{get\+Hex@{get\+Hex}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{get\+Hex(sf\+::\+Vector2f position) const }{getHex(sf::Vector2f position) const }}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ Hex\+Map\+::get\+Hex (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{position}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHexMap_add0ef8655711db2cd92d0a1b561cfc5e}{}\label{classHexMap_add0ef8655711db2cd92d0a1b561cfc5e}
+
+
+Returns pair of (row, column) coords of the hex which contains the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the position where hex is looked for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The row and column of the hex or (-\/1, -\/1) if position is outside the map 
+\end{DoxyReturn}
+\index{Hex\+Map@{Hex\+Map}!get\+Neighbours@{get\+Neighbours}}
+\index{get\+Neighbours@{get\+Neighbours}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{get\+Neighbours(int row, int column) const }{getNeighbours(int row, int column) const }}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ int, int $>$ $>$ Hex\+Map\+::get\+Neighbours (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHexMap_ab5b3eddce752a5e6c75d71223b289c24}{}\label{classHexMap_ab5b3eddce752a5e6c75d71223b289c24}
+
+
+Returns position of each neighbour of the hex on (row, column) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row of the hex \\
+\hline
+{\em column} & the column of the hex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of hex\textquotesingle{} neighbours\textquotesingle{} positions 
+\end{DoxyReturn}
+\index{Hex\+Map@{Hex\+Map}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{get\+Position(int row, int column) const }{getPosition(int row, int column) const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Hex\+Map\+::get\+Position (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHexMap_a62255c5a8e3c2063f5000616c80d0caf}{}\label{classHexMap_a62255c5a8e3c2063f5000616c80d0caf}
+
+
+Returns position of the center of a selected hex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row of a hex \\
+\hline
+{\em column} & the column of a hex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position of the center of the specified hex 
+\end{DoxyReturn}
+\index{Hex\+Map@{Hex\+Map}!init@{init}}
+\index{init@{init}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{init(int rows, int columns, float size=30.\+f)}{init(int rows, int columns, float size=30.f)}}]{\setlength{\rightskip}{0pt plus 5cm}void Hex\+Map\+::init (
+\begin{DoxyParamCaption}
+\item[{int}]{rows, }
+\item[{int}]{columns, }
+\item[{float}]{size = {\ttfamily 30.f}}
+\end{DoxyParamCaption}
+)}\hypertarget{classHexMap_aab6bd6a4e324a2cc3e22f4e1c5143d4c}{}\label{classHexMap_aab6bd6a4e324a2cc3e22f4e1c5143d4c}
+
+
+Initializes the map. Initially, all hexes are white. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & the number of rows \\
+\hline
+{\em columns} & the number of columns \\
+\hline
+{\em size} & the size of one hex (2 $\ast$ radius) \\
+\hline
+\end{DoxyParams}
+\index{Hex\+Map@{Hex\+Map}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Hex\+Map@{Hex\+Map}}
+\subsubsection[{\texorpdfstring{set\+Color(int row, int column, sf\+::\+Color color)}{setColor(int row, int column, sf::Color color)}}]{\setlength{\rightskip}{0pt plus 5cm}void Hex\+Map\+::set\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{sf\+::\+Color}]{color}
+\end{DoxyParamCaption}
+)}\hypertarget{classHexMap_a762097ad75f35ffe7de5e2db716e143f}{}\label{classHexMap_a762097ad75f35ffe7de5e2db716e143f}
+
+
+Sets the color of a selected hex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row of a hex \\
+\hline
+{\em column} & the column of a hex \\
+\hline
+{\em color} & the new color \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HexMap_8h}{Hex\+Map.\+h}\item 
+Hex\+Map.\+cpp\end{DoxyCompactItemize}

@@ -10,15 +10,9 @@ using namespace std;
 
 class Info
 {
-    static sf::Font font;
-
     vector<string> items;
 
 public:
-    static void loadFont(string filename) { font.loadFromFile(filename); }
-
-    static sf::Font& getFont() { return font; }
-
     void addItem(string item);
 
     void popItem() { items.pop_back(); }

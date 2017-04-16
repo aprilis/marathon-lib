@@ -1,6 +1,5 @@
 #include "Info.h"
-
-sf::Font Info::font;
+#include "Common.h"
 
 void Info::draw(sf::RenderWindow &window)
 {
@@ -8,7 +7,7 @@ void Info::draw(sf::RenderWindow &window)
     const int size = 14;
     const int gap = 20;
     sf::Text text;
-    text.setFont(font);
+    text.setFont(commonFont);
     text.setColor(color);
     text.setCharacterSize(size);
     sf::Vector2f pos(gap, gap);
@@ -17,7 +16,7 @@ void Info::draw(sf::RenderWindow &window)
         text.setPosition(pos);
         text.setString(item);
         window.draw(text);
-        pos.y += font.getLineSpacing(size);
+        pos.y += commonFont.getLineSpacing(size);
     }
 }
 

@@ -1,0 +1,4 @@
+<map id="Game" name="Game">
+<area shape="rect" id="node2" href="$classInfo.html" title="Usable class for printing real&#45;time info. " alt="" coords="5,5,49,32"/>
+<area shape="rect" id="node3" href="$classGameState.html" title="This class contains the state of the game. It draws it, shows the output window and saves game for fu..." alt="" coords="74,5,162,32"/>
+</map>
