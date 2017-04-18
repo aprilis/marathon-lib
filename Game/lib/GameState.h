@@ -64,7 +64,8 @@ public:
      * \brief Adds x to the drawables list
      *
      * The drawable can be one of the following types: sf::CircleShape, sf::RectangleShape, sf::ConvexShape, sf::Text.
-     * It is shown until the next turn and saved for later replays
+     * It is shown until the next turn and saved for later replays.
+     * Every object should be added only once per turn.
      */
     template<class T> void addDrawable(const T &x)
     {

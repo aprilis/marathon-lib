@@ -40,6 +40,7 @@ void Game::run()
 
     turnsLeft = ::turnsLeft();
     firstSync();
+    sendCommands();
     nextTurn();
 
     float time = 0.f;

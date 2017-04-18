@@ -52,13 +52,13 @@ protected:
 
     void drawSelection();
 
-    //! You can override this function for custom real-time drawing
+    //! You can override this function for custom real-time drawing (which should be updated more often than once per turn)
     virtual void draw() { }
 
-    //! You can override this function for custom real-time updates
+    //! You can override this function for custom real-time updates (usually not very useful)
     virtual void update() { }
 
-    //! This function should contain all synchronisation with server
+    //! This function should contain all synchronisation with server. You should also add all drawables there
     virtual void sync() { }
 
     //! You can override this function if you want the first sync to behave differently. Otherwise normal sync() will be called
@@ -68,13 +68,14 @@ protected:
      *
      *  When SEND_COMMANDS_LATE if off it is run right after sync().
      *  Otherwise it is run after turnDuration which is either specified or measured automatically (not recommended)
+     *  It is also run right after firstSync (no matter what settings you have)
      *
      *  CAUTION: this function is not run after firstSync() (you can do it manually)
      */
     virtual void sendCommands() { }
 
     /*!
-     * \brief You can override this function for event handling. However, it doesn't handle mouse events
+     * \brief You can override this function for event handling. However, it does NOT handle mouse events
      * \param event the sfml event
      * \sa leftClick, rightClick, selectedRect
      */
@@ -124,6 +125,11 @@ public:
 
     /*!
      * \brief This function simply runs the game until the main window is closed or an exception fired
+     *
+     * At first it invokes firstSync() and sendCommands() in the main thread
+     * Next it starts two separate threads: one for drawing and event handling (draw(), update(), myProcessEvent() etc. are called there),
+     * and the other one for syncing (sync() and sendCommands() are called there). You can assume that no pair of these functions
+     * will be run at the same time (there is a special mutex which prevents these functions from running simulantenously)
      */
     void run();
 

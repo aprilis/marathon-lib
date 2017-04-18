@@ -114,9 +114,8 @@ sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a401542d59b5346cba650367e548626ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a401542d59b5346cba650367e548626ce">moveCamera</a> (float cx, float cy, float zoom=1.f)</td></tr>
 <tr class="memdesc:a401542d59b5346cba650367e548626ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves camera so that its centered at (cx, cy) and zoomed with specified factor.  <a href="#a401542d59b5346cba650367e548626ce">More...</a><br /></td></tr>
 <tr class="separator:a401542d59b5346cba650367e548626ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ab78f5ed0d5ea879157357cf2fb2afa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1ab78f5ed0d5ea879157357cf2fb2afa">run</a> ()</td></tr>
-<tr class="memdesc:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function simply runs the game until the main window is closed or an exception fired. <br /></td></tr>
+<tr class="memitem:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a1ab78f5ed0d5ea879157357cf2fb2afa">run</a> ()</td></tr>
+<tr class="memdesc:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function simply runs the game until the main window is closed or an exception fired.  <a href="#a1ab78f5ed0d5ea879157357cf2fb2afa">More...</a><br /></td></tr>
 <tr class="separator:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17b8b67b1ebc97d05b97925bfe53b61f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a17b8b67b1ebc97d05b97925bfe53b61f"></a>
 template&lt;class T &gt; </td></tr>
@@ -136,25 +135,25 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a03387676134dd331f4a1902349926816"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03387676134dd331f4a1902349926816"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a03387676134dd331f4a1902349926816">draw</a> ()</td></tr>
-<tr class="memdesc:a03387676134dd331f4a1902349926816"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function for custom real-time drawing. <br /></td></tr>
+<tr class="memdesc:a03387676134dd331f4a1902349926816"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function for custom real-time drawing (which should be updated more often than once per turn) <br /></td></tr>
 <tr class="separator:a03387676134dd331f4a1902349926816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51e7f9bfbb9a2d29525b6ea009ebc345"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51e7f9bfbb9a2d29525b6ea009ebc345"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a51e7f9bfbb9a2d29525b6ea009ebc345">update</a> ()</td></tr>
-<tr class="memdesc:a51e7f9bfbb9a2d29525b6ea009ebc345"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function for custom real-time updates. <br /></td></tr>
+<tr class="memdesc:a51e7f9bfbb9a2d29525b6ea009ebc345"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function for custom real-time updates (usually not very useful) <br /></td></tr>
 <tr class="separator:a51e7f9bfbb9a2d29525b6ea009ebc345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab44617eccac431efb47e8737740b9f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab44617eccac431efb47e8737740b9f6"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#aab44617eccac431efb47e8737740b9f6">sync</a> ()</td></tr>
-<tr class="memdesc:aab44617eccac431efb47e8737740b9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function should contain all synchronisation with server. <br /></td></tr>
+<tr class="memdesc:aab44617eccac431efb47e8737740b9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function should contain all synchronisation with server. You should also add all drawables there. <br /></td></tr>
 <tr class="separator:aab44617eccac431efb47e8737740b9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91de9baa89af357070ccee44c6f0a21e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91de9baa89af357070ccee44c6f0a21e"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a91de9baa89af357070ccee44c6f0a21e">firstSync</a> ()</td></tr>
-<tr class="memdesc:a91de9baa89af357070ccee44c6f0a21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function if you want the first sync to behave differently. Otherwise normal <a class="el" href="classGame.html#aab44617eccac431efb47e8737740b9f6" title="This function should contain all synchronisation with server. ">sync()</a> will be called. <br /></td></tr>
+<tr class="memdesc:a91de9baa89af357070ccee44c6f0a21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function if you want the first sync to behave differently. Otherwise normal <a class="el" href="classGame.html#aab44617eccac431efb47e8737740b9f6" title="This function should contain all synchronisation with server. You should also add all drawables there...">sync()</a> will be called. <br /></td></tr>
 <tr class="separator:a91de9baa89af357070ccee44c6f0a21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcfb81710141ae68ff1e4571aaed2555"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#adcfb81710141ae68ff1e4571aaed2555">sendCommands</a> ()</td></tr>
 <tr class="memdesc:adcfb81710141ae68ff1e4571aaed2555"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can write sending commands code in this function.  <a href="#adcfb81710141ae68ff1e4571aaed2555">More...</a><br /></td></tr>
 <tr class="separator:adcfb81710141ae68ff1e4571aaed2555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e97a7944c35890bfec2910074cf5f23"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a0e97a7944c35890bfec2910074cf5f23">myProcessEvent</a> (const sf::Event &amp;event)</td></tr>
-<tr class="memdesc:a0e97a7944c35890bfec2910074cf5f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function for event handling. However, it doesn't handle mouse events.  <a href="#a0e97a7944c35890bfec2910074cf5f23">More...</a><br /></td></tr>
+<tr class="memdesc:a0e97a7944c35890bfec2910074cf5f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can override this function for event handling. However, it does NOT handle mouse events.  <a href="#a0e97a7944c35890bfec2910074cf5f23">More...</a><br /></td></tr>
 <tr class="separator:a0e97a7944c35890bfec2910074cf5f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45559f72d8a850d2acc62f6439400e7e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a45559f72d8a850d2acc62f6439400e7e">leftClick</a> (sf::Vector2f position)</td></tr>
 <tr class="memdesc:a45559f72d8a850d2acc62f6439400e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called whenever the user clicks left mouse button.  <a href="#a45559f72d8a850d2acc62f6439400e7e">More...</a><br /></td></tr>
@@ -280,7 +279,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table>
 </div><div class="memdoc">
 
-<p>You can override this function for event handling. However, it doesn't handle mouse events. </p>
+<p>You can override this function for event handling. However, it does NOT handle mouse events. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>the sfml event </td></tr>
@@ -320,6 +319,24 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ab78f5ed0d5ea879157357cf2fb2afa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function simply runs the game until the main window is closed or an exception fired. </p>
+<p>At first it invokes <a class="el" href="classGame.html#a91de9baa89af357070ccee44c6f0a21e" title="You can override this function if you want the first sync to behave differently. Otherwise normal syn...">firstSync()</a> and <a class="el" href="classGame.html#adcfb81710141ae68ff1e4571aaed2555" title="You can write sending commands code in this function. ">sendCommands()</a> in the main thread Next it starts two separate threads: one for drawing and event handling (<a class="el" href="classGame.html#a03387676134dd331f4a1902349926816" title="You can override this function for custom real-time drawing (which should be updated more often than ...">draw()</a>, <a class="el" href="classGame.html#a51e7f9bfbb9a2d29525b6ea009ebc345" title="You can override this function for custom real-time updates (usually not very useful) ...">update()</a>, <a class="el" href="classGame.html#a0e97a7944c35890bfec2910074cf5f23" title="You can override this function for event handling. However, it does NOT handle mouse events...">myProcessEvent()</a> etc. are called there), and the other one for syncing (<a class="el" href="classGame.html#aab44617eccac431efb47e8737740b9f6" title="This function should contain all synchronisation with server. You should also add all drawables there...">sync()</a> and <a class="el" href="classGame.html#adcfb81710141ae68ff1e4571aaed2555" title="You can write sending commands code in this function. ">sendCommands()</a> are called there). You can assume that no pair of these functions will be run at the same time (there is a special mutex which prevents these functions from running simulantenously) </p>
 
 </div>
 </div>
@@ -377,7 +394,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><div class="memdoc">
 
 <p>You can write sending commands code in this function. </p>
-<p>When SEND_COMMANDS_LATE if off it is run right after <a class="el" href="classGame.html#aab44617eccac431efb47e8737740b9f6" title="This function should contain all synchronisation with server. ">sync()</a>. Otherwise it is run after turnDuration which is either specified or measured automatically (not recommended)</p>
+<p>When SEND_COMMANDS_LATE if off it is run right after <a class="el" href="classGame.html#aab44617eccac431efb47e8737740b9f6" title="This function should contain all synchronisation with server. You should also add all drawables there...">sync()</a>. Otherwise it is run after turnDuration which is either specified or measured automatically (not recommended) It is also run right after firstSync (no matter what settings you have)</p>
 <p>CAUTION: this function is not run after <a class="el" href="classGame.html#a91de9baa89af357070ccee44c6f0a21e" title="You can override this function if you want the first sync to behave differently. Otherwise normal syn...">firstSync()</a> (you can do it manually) </p>
 
 </div>

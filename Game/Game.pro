@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     examples/Maze.cpp \
     examples/HexMapExample.cpp \
     examples/EditorExample.cpp \
-    examples/GeneralExample.cpp
+    examples/GeneralExample.cpp \
+    MyGame.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -38,6 +39,7 @@ HEADERS += \
     lib/Common.h \
     examples/HexMapExample.h \
     examples/EditorExample.h \
-    examples/GeneralExample.h
+    examples/GeneralExample.h \
+    MyGame.h
 
 LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system -lgcc_s -lgcc
