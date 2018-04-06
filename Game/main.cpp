@@ -1,6 +1,7 @@
 #include "lib/Wrapper.h"
 #include "lib/Config.h"
 #include "lib/Log.h"
+#include "lib/StdinLog.h"
 #include "examples/Maze.h"
 #include "examples/GeneralExample.h"
 #include "examples/HexMapExample.h"
@@ -22,16 +23,18 @@ int main(int argc, char *argv[])
     ofstream logger;
     merr.addStream(logger);
     mout.addStream(logger);
+    StdinLog inLog;
+    inLog.start(logger);
     while(true)
     {
         try
         {
             open_log(logger, "logs");
-            //GeneralExample game(800, 600);
+            GeneralExample game(800, 600);
             //HexMapExample game(800, 600);
             //EditorExample game(800, 600);
             //Maze game(800, 600);
-            MyGame game(800, 600, "Deadline24 " + to_string(port));
+            //MyGame game(800, 600, "Deadline24 " + to_string(port));
             game.run();
         }
         catch(...)

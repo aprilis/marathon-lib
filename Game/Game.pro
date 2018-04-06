@@ -19,7 +19,8 @@ SOURCES += main.cpp \
     examples/HexMapExample.cpp \
     examples/EditorExample.cpp \
     examples/GeneralExample.cpp \
-    MyGame.cpp
+    MyGame.cpp \
+    lib/StdinLog.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -40,6 +41,7 @@ HEADERS += \
     examples/HexMapExample.h \
     examples/EditorExample.h \
     examples/GeneralExample.h \
-    MyGame.h
+    MyGame.h \
+    lib/StdinLog.h
 
 LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system -lgcc_s -lgcc
