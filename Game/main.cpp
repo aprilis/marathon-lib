@@ -10,6 +10,7 @@
 #include <clocale>
 #include <iostream>
 #include <QApplication>
+#include <SFML/Audio.hpp>
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -20,16 +21,19 @@ int main(int argc, char *argv[])
     setlocale(LC_NUMERIC,"C");
 
     connect("test.natodia.net", port, "team60", "157159331f");
-    ofstream logger;
-    merr.addStream(logger);
+    ofstream logger, stderrLogger;
+    merr.addStream(stderrLogger);
     mout.addStream(logger);
     StdinLog inLog;
     inLog.start(logger);
+
     while(true)
     {
         try
         {
             open_log(logger, "logs");
+            open_log(stderrLogger, "stderr");
+
             GeneralExample game(800, 600);
             //HexMapExample game(800, 600);
             //EditorExample game(800, 600);
@@ -43,6 +47,7 @@ int main(int argc, char *argv[])
             sleep(1);
         }
         logger << flush;
+        stderrLogger << flush;
     }
 
     return 0;

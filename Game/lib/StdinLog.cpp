@@ -25,7 +25,8 @@ void StdinLog::loop()
     while(true)
     {
         fgets(buf, N, input);
+        *out << pref + buf << flush;
         fprintf(output, buf);
-        *out << pref + buf;
+        fflush(output);
     }
 }
