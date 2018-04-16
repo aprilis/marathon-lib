@@ -76,8 +76,8 @@ void HexMap::draw(sf::RenderWindow &window) const
             window.draw(y);
 }
 
-int move_x[2][6] = {{0, 0, 1, -1, 1, -1}, {0, 0, 1, -1, -1, 1}};
-int move_y[2][6] = {{1, -1, 0, 0, -1, -1}, {1, -1, 0, 0, 1, 1}};
+static int move_x[2][6] = {{0, 0, 1, -1, 1, -1}, {0, 0, 1, -1, -1, 1}};
+static int move_y[2][6] = {{1, -1, 0, 0, -1, -1}, {1, -1, 0, 0, 1, 1}};
 
 vector<pair<int, int>> HexMap::getNeighbours(int row, int column) const
 {

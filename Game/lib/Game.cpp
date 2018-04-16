@@ -84,6 +84,7 @@ void Game::run()
             drawSelection();
             window.setView(window.getDefaultView());
             info.draw(window);
+            console.draw(window);
             window.display();
             mut.unlock();
         }
@@ -158,6 +159,14 @@ void Game::processEvent(const sf::Event &event)
     const int maxClickTime = 500;
     const float zoomFactor = 0.05f;
     const double maxClickMove = 3;
+
+    auto consoleFeedback = console.processEvent(event);
+    if(consoleFeedback.first)
+    {
+        if(consoleFeedback.second != "")
+            consoleCommand(consoleFeedback.second);
+        return;
+    }
 
     if(event.type == sf::Event::Closed)
     {

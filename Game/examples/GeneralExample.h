@@ -18,6 +18,8 @@ protected:
 
 public:
     GeneralExample(int width, int height);
+
+    void consoleCommand(string command);
 };
 
 #endif // GENERALEXAMPLE_H

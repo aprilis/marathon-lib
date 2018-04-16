@@ -5,6 +5,7 @@
 #include "Info.h"
 #include "Config.h"
 #include "GameState.h"
+#include "Console.h"
 #include <thread>
 #include <mutex>
 #include <sstream>
@@ -35,6 +36,8 @@ protected:
     bool mousePressed = false;
 
     Info info;
+
+    Console console;
 
     bool end = false;
 
@@ -98,6 +101,12 @@ protected:
      * \param rect the selected area
      */
     virtual void selectedRect(sf::FloatRect rect) { }
+
+    /*!
+     * \brief This function is called whenever a command is entered in the console
+     * \param the command
+     */
+    virtual void consoleCommand(string command) { }
 
     void runSync();
 

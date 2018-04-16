@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     examples/EditorExample.cpp \
     examples/GeneralExample.cpp \
     MyGame.cpp \
-    lib/StdinLog.cpp
+    lib/StdinLog.cpp \
+    lib/Console.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -42,6 +43,7 @@ HEADERS += \
     examples/EditorExample.h \
     examples/GeneralExample.h \
     MyGame.h \
-    lib/StdinLog.h
+    lib/StdinLog.h \
+    lib/Console.h
 
 LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system -lgcc_s -lgcc

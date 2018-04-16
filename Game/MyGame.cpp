@@ -3,6 +3,7 @@
 
 MyGame::MyGame(int width, int height, string title) : Game(width, height, title)
 {
+    view.zoom(10);
     info.addItem("turns left", turnsLeft);
 }
 

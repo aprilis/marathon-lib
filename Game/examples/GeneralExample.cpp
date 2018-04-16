@@ -59,3 +59,8 @@ void GeneralExample::sync()
     sf::Text text = makeText("przykladowy tekst", 15, 600, 130, sf::Color::White);
     addDrawable(text);
 }
+
+void GeneralExample::consoleCommand(string command)
+{
+    console.stdout << "you typed " << command << endl;
+}
