@@ -9,6 +9,7 @@
 #include "StreamWindow.h"
 #include "Log.h"
 #include "Config.h"
+#include "Transform.h"
 #include <sstream>
 #include <fstream>
 #include <vector>
@@ -19,6 +20,13 @@ using namespace std;
 //! This class contains the state of the game. It draws it, shows the output window and saves game for further viewing
 class GameState
 {
+    struct Cube
+    {
+        sf::Vector3f position;
+        sf::Color color;
+        sf::Vector3f size;
+    };
+
     static stringstream out_stream;
     static stringstream err_stream;
 
@@ -28,6 +36,8 @@ class GameState
     StreamWindow *window;
 
     vector<unique_ptr<sf::Drawable>> drawables;
+    vector<Cube> cubes;
+    sf::Vector3f faceShift[6];
 
     void logStream(const string &name, const string &str);
 
@@ -37,6 +47,8 @@ class GameState
     void logObject(const sf::CircleShape &obj);
     void logObject(const sf::ConvexShape &obj);
     void logObject(const sf::Text &obj);
+
+    void logCube(Cube cube);
 
 public:
     static ofstream log;
@@ -58,7 +70,7 @@ public:
 
     void update();
 
-    void clearDrawables() { drawables.clear(); }
+    void clearDrawables() { drawables.clear(); cubes.clear(); }
 
     /*!
      * \brief Adds x to the drawables list
@@ -76,7 +88,11 @@ public:
 #endif
     }
 
+    void addCube(sf::Vector3f position, sf::Color color, sf::Vector3f size);
+    void addCube(sf::Vector3f position, sf::Color color, float size);
+
     void draw(sf::RenderWindow &win);
+    void draw3D(sf::RenderWindow &win, Transform transform);
 };
 
 #endif // GAMESTATE_H

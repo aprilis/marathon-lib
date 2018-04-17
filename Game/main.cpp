@@ -6,6 +6,7 @@
 #include "examples/GeneralExample.h"
 #include "examples/HexMapExample.h"
 #include "examples/EditorExample.h"
+#include "examples/3DExample.h"
 #include "MyGame.h"
 #include <clocale>
 #include <iostream>
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     setlocale(LC_NUMERIC,"C");
 
-    connect("test.natodia.net", port, "team60", "157159331f");
+    connect("test.natodia.net", port, "team17", "iroctuxbgw");
     ofstream logger, stderrLogger;
     merr.addStream(stderrLogger);
     mout.addStream(logger);
@@ -34,7 +35,8 @@ int main(int argc, char *argv[])
             open_log(logger, "logs");
             open_log(stderrLogger, "stderr");
 
-            GeneralExample game(800, 600);
+            ThreeDExample game(800, 600);
+            //GeneralExample game(800, 600);
             //HexMapExample game(800, 600);
             //EditorExample game(800, 600);
             //Maze game(800, 600);

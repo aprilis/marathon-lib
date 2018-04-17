@@ -21,7 +21,9 @@ SOURCES += main.cpp \
     examples/GeneralExample.cpp \
     MyGame.cpp \
     lib/StdinLog.cpp \
-    lib/Console.cpp
+    lib/Console.cpp \
+    lib/Transform.cpp \
+    examples/3DExample.cpp
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -44,6 +46,8 @@ HEADERS += \
     examples/GeneralExample.h \
     MyGame.h \
     lib/StdinLog.h \
-    lib/Console.h
+    lib/Console.h \
+    lib/Transform.h \
+    examples/3DExample.h
 
-LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system -lgcc_s -lgcc
+LIBS += -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system -lgcc_s -lgcc -lGL -lGLU

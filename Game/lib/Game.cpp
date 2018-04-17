@@ -9,6 +9,8 @@
 #include <thread>
 #include <mutex>
 #include <unistd.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 using namespace std;
 
 double length(sf::Vector2f vec)
@@ -19,6 +21,20 @@ double length(sf::Vector2f vec)
 Game::Game(int windowWidth, int windowHeight, string title)
     : window(sf::VideoMode(windowWidth, windowHeight), title), gameState(title)
 {
+#ifdef ENABLE_3D
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_CULL_FACE);
+    //glCullFace(GL_FRONT_AND_BACK);
+    glDepthMask(GL_TRUE);
+
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(90.f, 1.f, 50.f, 1e10);
+
+    camera3D = camera3D * Transform::translation(0, 0, 150);
+    for(int i = 0; i < 16; i++)
+        cerr << camera3D.matrix[i] << " ";
+#endif
 }
 
 sf::Vector2f Game::getMousePosition()
@@ -78,6 +94,10 @@ void Game::run()
         {
             mut.lock();
             window.clear();
+#ifdef ENABLE_3D
+            gameState.draw3D(window, camera3D);
+            window.pushGLStates();
+#endif
             window.setView(view);
             gameState.draw(window);
             draw();
@@ -85,6 +105,9 @@ void Game::run()
             window.setView(window.getDefaultView());
             info.draw(window);
             console.draw(window);
+#ifdef ENABLE_3D
+            window.popGLStates();
+#endif
             window.display();
             mut.unlock();
         }
@@ -206,8 +229,23 @@ void Game::processEvent(const sf::Event &event)
     {
         int delta = event.mouseWheel.delta;
         view.zoom(1 - zoomFactor * delta);
+        camera3D = camera3D * Transform::translation(0, 0, delta * -10);
     }
+#ifdef ENABLE_3D
+    else if(event.type == sf::Event::MouseMoved && sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        sf::Vector2i delta(event.mouseMove.x, event.mouseMove.y);
+        delta -= mousePos;
+        camera3D = camera3D
+                * Transform::translation(0, 0, -300)
+                * Transform::rotationXZ(delta.x * -0.3)
+                * Transform::rotationYZ(-delta.y * -0.3)
+                * Transform::translation(0, 0, 300);
+    }
+#endif
     else myProcessEvent(event);
+    if(event.type == sf::Event::MouseMoved)
+        mousePos = { event.mouseMove.x, event.mouseMove.y };
 }
 
 void Game::updateCamera()
@@ -217,10 +255,14 @@ void Game::updateCamera()
     auto pos = sf::Mouse::getPosition(window);
     auto size = window.getSize();
     if(pos.x < 0 || pos.y < 0 || pos.x > size.x || pos.y > size.y) return;
-    if(pos.x <= border) view.move(-speed, 0);
-    if(pos.y <= border) view.move(0, -speed);
-    if(pos.x >= (int)size.x - border) view.move(speed, 0);
-    if(pos.y >= (int)size.y - border) view.move(0, speed);
+    sf::Vector2f offset;
+    if(pos.x <= border) offset += { -1, 0 };
+    if(pos.y <= border) offset += { 0, -1 };
+    if(pos.x >= (int)size.x - border) offset += { 1, 0 };
+    if(pos.y >= (int)size.y - border) offset += { 0, 1 };
+
+    view.move(offset * speed);
+    camera3D = camera3D * Transform::translation(offset.x * 10, -offset.y * 10, 0);
 }
 
 void Game::drawSelection()

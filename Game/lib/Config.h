@@ -29,7 +29,7 @@
 //#define THROW_EXCEPTIONS
 
 //czy mozna zaznaczac prostakaty myszka
-#define ENABLE_RECT_SELECTION
+//#define ENABLE_RECT_SELECTION
 
 //liczba pikseli od granicy okna gdzie po najechaniu kursorem okno sie przesuwa
 #define WINDOW_BORDER 30
@@ -45,5 +45,8 @@
 
 //sciezka do pliku z czcionka
 #define FONT_PATH "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf"
+
+//czy wlaczyc obsluge 3D (w 2D nic nie psuje poza tym ze moze dzialac troche wolniej)
+#define ENABLE_3D
 
 #endif // CONFIG_H

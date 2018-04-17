@@ -1,6 +1,9 @@
 #include "GameState.h"
 #include "Log.h"
 #include "Config.h"
+#include <SFML/System.hpp>
+#include <GL/gl.h>
+#include <iostream>
 
 ostream& operator<<(ostream &o, const sf::Vector2f &vec)
 {
@@ -35,6 +38,14 @@ GameState::GameState(string title)
 #ifdef STREAM_WINDOW
     window = new StreamWindow(title, {"out", "err"});
 #endif
+
+    for(auto &f: faceShift)
+    {
+        const float SHIFT = 0.4;
+        f.x = (float)rand() / RAND_MAX * SHIFT + (1 - SHIFT);
+        f.y = (float)rand() / RAND_MAX * SHIFT + (1 - SHIFT);
+        f.z = (float)rand() / RAND_MAX * SHIFT + (1 - SHIFT);
+    }
 }
 
 GameState::~GameState()
@@ -133,8 +144,80 @@ void GameState::logTransform(const sf::Transform &transform)
         log << ans[i] << " ";
 }
 
+void GameState::addCube(sf::Vector3f position, sf::Color color, float size)
+{
+    addCube(position, color, { size, size, size });
+}
+
+void GameState::addCube(sf::Vector3f position, sf::Color color, sf::Vector3f size)
+{
+    cubes.push_back({ position, color, size });
+}
+
 void GameState::draw(sf::RenderWindow &win)
 {
     for(const auto &d: drawables)
         win.draw(*d);
+}
+
+static void glVertex3f(const sf::Vector3f &vec)
+{
+    glVertex3f(vec.x, vec.y, vec.z);
+}
+
+static void drawSquare(const sf::Vector3f &corner, const sf::Vector3f &v1, const sf::Vector3f &v2)
+{
+    glVertex3f(corner);
+    glVertex3f(corner + v1);
+    glVertex3f(corner + v1 + v2);
+    glVertex3f(corner + v2);
+}
+
+static void glColor(sf::Color col, sf::Vector3f noise)
+{
+    glColor3ub(min(255, (int)(col.r * noise.x)), min(255, (int)(col.g * noise.y)), min(255, (int)(col.b * noise.z)));
+}
+
+void GameState::draw3D(sf::RenderWindow &win, Transform transform)
+{
+    if(!cubes.empty())
+    {
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+
+        for(auto c: cubes)
+        {
+            auto s = c.size;
+            auto col = c.color;
+            sf::Vector3f c1 { 0, 0, 0 }, c2 = s;
+
+            glPushMatrix();
+            glTranslatef(c.position.x, c.position.y, c.position.z);
+            glMultMatrixf(transform.inverse().matrix);
+
+            glBegin(GL_QUADS);
+
+            glColor(col, faceShift[0]);
+            drawSquare(c1, { 0, s.y, 0 }, { s.x, 0, 0 });
+
+            glColor(col, faceShift[1]);
+            drawSquare(c1, { s.x, 0, 0 }, { 0, 0, s.z });
+
+            glColor(col, faceShift[2]);
+            drawSquare(c1, { 0, 0, s.z }, { 0, s.y, 0 });
+
+            glColor(col, faceShift[3]);
+            drawSquare(c2, { -s.x, 0, 0 }, { 0, -s.y, 0 });
+
+            glColor(col, faceShift[4]);
+            drawSquare(c2, { 0, 0, -s.z }, { -s.x, 0, 0 });
+
+            glColor(col, faceShift[5]);
+            drawSquare(c2, { 0, -s.y, 0 }, { 0, 0, -s.z });
+
+            glEnd();
+
+            glPopMatrix();
+        }
+    }
 }

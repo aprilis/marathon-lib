@@ -77,7 +77,7 @@ bool sendMessage(string message)
 void wait()
 {
 #ifdef TCP
-    send_message("WAIT");
+    sendMessage("WAIT");
     string waiting;
     double time;
     cin >> waiting >> time;

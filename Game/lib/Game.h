@@ -6,6 +6,7 @@
 #include "Config.h"
 #include "GameState.h"
 #include "Console.h"
+#include "Transform.h"
 #include <thread>
 #include <mutex>
 #include <sstream>
@@ -26,12 +27,15 @@ protected:
     sf::RenderWindow window;
 
     sf::View view;
+    Transform camera3D;
 
     sf::Vector2f mouseClick;
 
     sf::Clock mouseClickTime;
 
     sf::Clock turnTime;
+
+    sf::Vector2i mousePos;
 
     bool mousePressed = false;
 
@@ -144,6 +148,12 @@ public:
 
     //! This function simply calls gameState.addDrawable(x)
     template<class T> void addDrawable(const T &x) { gameState.addDrawable(x); }
+
+    //! This function simply calls gameState.addCube(position, color, size)
+    void addCube(sf::Vector3f position, sf::Color color, sf::Vector3f size) { gameState.addCube(position, color, size); }
+
+    //! This function simply calls gameState.addCube(position, color, size)
+    void addCube(sf::Vector3f position, sf::Color color, float size) { gameState.addCube(position, color, size); }
 
     //! Shows window with content of mout and merr
     void showOutputWindow() { gameState.showWindow(); }
