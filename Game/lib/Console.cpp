@@ -106,7 +106,6 @@ pair<bool, string> Console::processEvent(const sf::Event &event)
 void Console::draw(sf::RenderWindow &window)
 {
     if(!active) return;
-    static const int gap = 10;
 
     vector<string> screen = currentScreen();
     const auto &font = commonFont;
@@ -114,7 +113,7 @@ void Console::draw(sf::RenderWindow &window)
     auto windowHeight = window.getSize().y;
 
     sf::RectangleShape background;
-    background.setFillColor(sf::Color(0, 100, 0, 160));
+    background.setFillColor(backgroundColor);
     background.setSize({ window.getSize().x, height });
     background.setPosition({ 0, windowHeight - height });
     window.draw(background);

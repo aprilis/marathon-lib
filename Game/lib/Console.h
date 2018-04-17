@@ -23,7 +23,10 @@ class Console
 
     int lines = 10;
 
-    int fontSize = 28;
+    int fontSize = 14;
+    int gap = 5;
+
+    sf::Color backgroundColor = { 0, 100, 0, 160 };
 
     vector<string> currentScreen();
 
@@ -35,6 +38,7 @@ public:
     void setTrigger(sf::Keyboard::Key key) { trigger = key; }
     void setLines(int n) { lines = n; }
     void setFontSize(int n) { fontSize = n; }
+    void setBackgroundcolor(sf::Color color) { backgroundColor = color; }
 
     void setActive(bool act) { active = act; }
     bool isActive() { return active; }
