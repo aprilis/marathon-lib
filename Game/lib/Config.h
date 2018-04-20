@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 //zakomentowac do testowania bez komunikacji z serwerem
-//#define TCP
+#define TCP
 
 //liczba klatek na sekunde wyswietlanych przez okno
 #define FPS 30
@@ -23,7 +23,7 @@
 #define TURNS_LEFT_COMMAND "TURNS_LEFT"
 
 //tekst zaczynajacy wszystkie komunikaty o bledach
-#define ERROR_STRING "FAILED"
+#define ERROR_STRING "ERR"
 
 //czy w razie bledow rzucac wyjatki ktore restartuja gre
 //#define THROW_EXCEPTIONS
@@ -41,12 +41,12 @@
 #define SAVE_GAME
 
 //czy rzucac wyjatek po przeskoczeniu tury
-#define TURN_MISSED_EXCEPTION
+//#define TURN_MISSED_EXCEPTION
 
 //sciezka do pliku z czcionka
 #define FONT_PATH "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf"
 
 //czy wlaczyc obsluge 3D (w 2D nic nie psuje poza tym ze moze dzialac troche wolniej)
-#define ENABLE_3D
+//#define ENABLE_3D
 
 #endif // CONFIG_H

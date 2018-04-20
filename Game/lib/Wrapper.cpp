@@ -78,10 +78,6 @@ void wait()
 {
 #ifdef TCP
     sendMessage("WAIT");
-    string waiting;
-    double time;
-    cin >> waiting >> time;
-    usleep(time * 900000);
     checkOK();
 #endif
 }

@@ -17,11 +17,12 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     int port = 10000;
+    setLogPrefix(to_string(port) + "_");
 
     QApplication app(argc, argv);
     setlocale(LC_NUMERIC,"C");
 
-    connect("test.natodia.net", port, "team17", "iroctuxbgw");
+    connect("tr.contest.pizza", port, "team26", "8372d2fdca");
     ofstream logger, stderrLogger;
     merr.addStream(stderrLogger);
     mout.addStream(logger);
@@ -32,14 +33,14 @@ int main(int argc, char *argv[])
     {
         try
         {
-            open_log(logger, "logs");
-            open_log(stderrLogger, "stderr");
+            openLog(logger, "logs");
+            openLog(stderrLogger, "stderr");
 
-            ThreeDExample game(800, 600);
+            //ThreeDExample game(800, 600);
             //GeneralExample game(800, 600);
             //HexMapExample game(800, 600);
             //EditorExample game(800, 600);
-            //Maze game(800, 600);
+            Maze game(800, 600);
             //MyGame game(800, 600, "Deadline24 " + to_string(port));
             game.run();
         }

@@ -24,7 +24,7 @@ ofstream GameState::log;
 GameState::GameState(string title)
 {
 #ifdef SAVE_GAME
-    open_log(log, "games");
+    openLog(log, "games");
 #endif
     static bool init = false;
     if(!init)

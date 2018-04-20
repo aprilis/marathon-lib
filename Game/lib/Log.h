@@ -70,6 +70,8 @@ extern MultiStream merr;
  * \param of the stream to reopen
  * \param dir the name of the directory
  */
-void open_log(ofstream &of, string dir);
+void openLog(ofstream &of, string dir);
+
+void setLogPrefix(string prefix);
 
 #endif // LOG_H
